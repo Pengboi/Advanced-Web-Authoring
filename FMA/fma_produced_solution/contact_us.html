@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Emblem Contact Us Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/normalize.css">
+        <link rel="stylesheet" href="src/contact_us.css">
+    </head>
+
+    <body>
+        <nav class="skip-links">
+            <a href="#header">Skip to Header Content</a>
+            <a href="#contact-us">Skip to Contact Information Content</a>
+            <a href="#contact-form">Skip to Content Form Content</a>
+            <a href="#footer">Skip to Footer Content</a>
+        </nav>
+
+        <div class="grid-container" id="grid-container">
+            <header class="header" id="header" tabindex="0">
+                <section class="logo-container">
+                    <a href="index.html"><img id="logo" alt="Emblem logo" src="src/images/emblem_logo_192.png" /></a>
+                    <div class="logo-text">
+                        <h1>Emblem</h1>
+                        <h3>Rare, Collectible Books</h3>
+                    </div>
+            
+                    <div class="menu-wrapper">
+                        <input type="checkbox" class="toggle" />
+            
+                        <div class="hamburger">
+                            <div class="bar"></div>
+                        </div>
+            
+                        <nav class="mobile-menu">
+                            <ul>
+                                <li><a href="index.html" class="navigation-link">Home</a></li>
+                                <li><a href="books.html" class="navigation-link">Books</a></li>
+                                <li><a href="delivery.html" class="navigation-link">Delivery</a></li>
+                                <li><a href="#" class="navigation-link">About us</a></li>
+                                <li><a href="#" class="navigation-link">Books as an Investment</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+            
+                </section>
+            
+                <nav class="header-links">
+                    <a href="contact_us.html">Contact us</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Login</a>
+                </nav>
+            
+                <nav class="navigation">
+                    <hr>
+                    <nav class="navbar" id="navbar">
+                        <a href="index.html" class="navigation-link">Home</a>
+                        <a href="books.html" class="navigation-link">Books</a>
+                        <a href="delivery.html" class="navigation-link">Delivery</a>
+                        <a href="#" class="navigation-link">About us</a>
+                        <a href="#" class="navigation-link">Books as an Investment</a>
+                    </nav>
+                </nav>
+            </header>
+
+            <main class="main-body-container">
+                <section id="contact-us" tabindex="0" class="contact-us">
+                    <h2>Contact Us.</h2>
+                    <p> Please feel free to contact is if you are looking to buy a book not listed in our collection, or you are looking to sell
+                        a book, have a book valued or have a book repaired. <br /><br />
+                        
+                        We try to answer all queries within 24 hours of receipt. <br /> <br />
+                        
+                        <a href="mailto:sales@emblem-rare-books.com">Email: sales@emblem-rare-books.com</a><br /> <br />
+                        <a href="tel:02085556789">Phone: 0208 555 6789</a>
+                    </p>
+                </section>
+                
+                <section id="contact-form" tabindex="0" class="contact-form">
+                    <h2 class="form-heading">Contact Form:</h2>
+                    <form class="main-form fancy-border">
+                        <fieldset id="name-details">
+                            <legend>Customer Details</legend>
+                            <label for="title" class="title-question-label bolder-label">Title:</label>
+                            <select size="1" id="title" name="title" class="title-input">
+                                <option value="">Choose</option>
+                                <option value="Mr">Mr.</option>
+                                <option value="Mrs">Mrs.</option>
+                                <option value="Miss">Miss.</option>
+                            </select>
+
+                            <label class="firstname-label bolder-label" for="firstname">First Name:<span> *</span></label>
+                            <input required class="firstname-input" name="firstname" id="firstname" type="text">
+                            
+                            <label class="surname-label bolder-label" for="surname">Surname:<span> *</span></label>
+                            <input required class="surname-input" name="surname" id="surname" type="text">
+                        </fieldset>
+
+                        <fieldset id="contact-details">
+                            <legend>Contact Details</legend>
+                            <label class="email-label bolder-label" for="email">Email:<span> *</span></label>
+                            <input required class="email-input" name="email" id="email" type="email">
+                        </fieldset>
+
+                        <fieldset id="dealer-details">
+                            <legend>Are you a dealer?<span> *</span></legend>
+                            <label for="dealer-Yes">
+                                <input type="radio" id="dealer-Yes" name="dealer" value="Yes" checked> Yes
+                            </label>
+                            <label for="dealer-No">
+                                <input type="radio" id="dealer-No" name="dealer" value="No"> No
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="interest-details">
+                            <legend>
+                                Interests
+                            </legend>
+                            <label for="20th-century">
+                                <input type="checkbox" id="20th-century" class="interests-option" name="interests-option"
+                                    value="20th Century">20<sup>th</sup> Century
+                            </label>
+                            
+                            <label for="19th-century">
+                                <input type="checkbox" id="19th-century" class="interests-option" name="interests-option"
+                                    value="19th Century">19<sup>th</sup> Century
+                            </label>
+                            
+                            <label for="18th-century">
+                                <input type="checkbox" id="18th-century" class="interests-option" name="interests-option"
+                                    value="18th Century">18<sup>th</sup> Century
+                            </label>
+                            
+                            <label for="rare-books">
+                                <input type="checkbox" id="rare-books" class="interests-option" name="interests-option" value="rare-books">Rare
+                                Books
+                            </label>
+                        </fieldset>
+                        
+                        <fieldset id="buyer-details">
+                            <legend>Selling or Buying?<span> *</span></legend>
+                            <select required class="account-type" id="account-type" name="account-type">
+                                <option value="">Choose</option>
+                                <option value="selling">Selling</option>
+                                <option value="buying">Buying</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </fieldset>
+
+                        <fieldset id="comments">
+                            <legend>Optional Comments:</legend>
+                            <textarea name="comments"></textarea>
+                        </fieldset>
+                        <input id="submit" type="submit" value="Submit">
+                    </form>
+                </section>
+            </main>
+
+            
+
+            <footer id="footer" tabindex="0" class="footer">
+                <section class="contact-details">
+                    <h2>Contact Details</h2>
+                    <p>Email:</p>
+                    <a href="mailto:sales@emblem-rare-books.com">sales@emblem-rare-books.com</a>
+                    <p>Phone:</p>
+                    <a href="tel:02085556789">0208 555 6789</a>
+                </section>
+
+                <section class="footer-links">
+                    <h2>information</h2>
+                    <a href="#">
+                        <p>Privacy</p>
+                    </a>
+                    <a href="#">
+                        <p>Terms and Conditions</p>
+                    </a>
+                    <a href="#">
+                        <p>Returns</p>
+                    </a>
+                </section>
+            </footer>
+        </div>
+    </body>
+
+</html>

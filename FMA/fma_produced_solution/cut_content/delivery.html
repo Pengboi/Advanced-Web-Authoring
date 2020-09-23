@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Emblem Delivery Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/normalize.css">
+    <link rel="stylesheet" href="src/delivery.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/collapsible_content.js"></script>
+</head>
+
+<body>
+    <div class="grid-container" id="grid-container">
+        <header class="header">
+            <div class="logo-container">
+                <a href="index.html"><img id="logo" alt="Emblem logo" src="src/images/emblem_logo_192.png" /></a>
+                <div class="logo-text">
+                    <h1>Emblem</h1>
+                    <h3>Rare, Collectible Books</h3>
+                </div>
+
+                <div class="menu-wrapper">
+                    <input type="checkbox" class="toggle" />
+
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="mobile-menu">
+                        <ul>
+                            <li><a href="index.html" class="navigation-link">Home</a></li>
+                            <li><a href="books.html" class="navigation-link">Books</a></li>
+                            <li><a href="delivery.html" class="navigation-link">Delivery</a></li>
+                            <li><a href="#" class="navigation-link">About us</a></li>
+                            <li><a href="#" class="navigation-link">Books as an Investment</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <nav class="header-links">
+                <a href="contact_us.html">Contact us</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Login</a>
+            </nav>
+
+            <nav class="navigation">
+                <hr>
+                <nav class="navbar" id="navbar">
+                    <a href="index.html" class="navigation-link">Home</a>
+                    <a href="books.html" class="navigation-link">Books</a>
+                    <a href="delivery.html" class="navigation-link">Delivery</a>
+                    <a href="#" class="navigation-link">About us</a>
+                    <a href="#" class="navigation-link">Books as an Investment</a>
+                </nav>
+            </nav>
+        </header>
+
+        <div class="main-body-container">
+            <div class="delivery-information">
+                <h2>Delivery</h2>
+                <p>All deliveries are included in the price of the book for books over £500. Otherwise the following
+                    rates apply:</p>
+
+                <div class="table">
+                    <table id="delivery-pricing">
+                        <caption>Emblem Worldwide Delivery Pricing Table</caption>
+                        <col>
+                        <colgroup span="2"></colgroup>
+                        <colgroup span="2"></colgroup>
+                        <colgroup span="2"></colgroup>
+                        <thead>
+                            <tr>
+                                <td rowspan="2"></td>
+                                <th scope="colgroup" id="under-1kg" colspan="2">Up to 1kg</th>
+                                <th scope="colgroup" id="over-1kg" colspan="2">Over 1kg</th>
+                                <th scope="colgroup" id="over-3kg" colspan="2">Over 3kg</th>
+                            </tr>
+                            <tr>
+                                <th scope="col" id="under-1kg-premium">Premium</th>
+                                <th scope="col" id="under-1kg-standard">Standard</th>
+
+                                <th scope="col" id="over-1kg-premium">Premium</th>
+                                <th scope="col" id="over-1kg-standard">Standard</th>
+
+                                <th scope="col" id="over-3kg-premium">Premium</th>
+                                <th scope="col" id="over-3kg-standard">Standard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="first-row">
+                                <th scope="row" id="UK">UK</th>
+                                <td headers="UK under-1kg-premium under-1kg">£5.99</td>
+                                <td headers="UK under-1kg-standard under-1kg">£9.99</td>
+                                <td headers="UK over-1kg-premium over-1kg">£11.59</td>
+                                <td headers="UK over-1kg-standard over-1kg">£16.59</td>
+                                <td headers="UK over-3kg-premium over-3kg">£33.99</td>
+                                <td headers="UK over-3kg-standard over-3kg">£43.99</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" id="EU">Europe</th>
+                                <td headers="EU under-1kg-premium under-1kg">£12.00</td>
+                                <td headers="EU under-1kg-standard under-1kg">£16.00</td>
+                                <td headers="EU over-1kg-premium over-1kg">£25.00</td>
+                                <td headers="EU over-1kg-standard over-1kg">£31.00</td>
+                                <td headers="EU over-3kg-premium over-3kg">£70.00</td>
+                                <td headers="EU over-3kg-standard over-3kg">£80.00</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" id="USA/CA">USA / Canada</th>
+                                <td headers="USA/CA under-1kg-premium under-1kg">£14.99</td>
+                                <td headers="USA/CA under-1kg-standard under-1kg">£22.99</td>
+                                <td headers="USA/CA over-1kg-premium over-1kg">£27.00</td>
+                                <td headers="USA/CA over-1kg-standard over-1kg">£32.00</td>
+                                <td headers="USA/CA over-3kg-premium over-3kg">£68.00</td>
+                                <td headers="USA/CA over-3kg-standard over-3kg">£91.00</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" id="WW">Rest of the World</th>
+                                <td headers="WW under-1kg-premium under-1kg">£20.00</td>
+                                <td headers="WW under-1kg-standard under-1kg">£24.00</td>
+                                <td headers="WW over-1kg-premium over-1kg">£25.00</td>
+                                <td headers="WW over-1kg-standard over-1kg">£30.00</td>
+                                <td headers="WW over-3kg-premium over-3kg">£80.00</td>
+                                <td headers="WW over-3kg-standard over-3kg">£91.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    Deliveries are undertaken where appropriate by specialist fragile and valuable goods
+                                    handlers. All goods are sent first-class to both the UK and abroad.
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+
+                    <button class="mobile collapsible">UK</button>
+                    <div class="mobile content">
+                        <p>Up to 1KG:</p>
+                        <p><b>Premium:</b> £5.99 <b>Standard:</b> £9.99</p>
+                        <br />
+                        <p>Over 1KG:</p>
+                        <p><b>Premium:</b> £11.59 <b>Standard:</b> £16.59</p>
+                        <br />
+                        <p>Over 3KG:</p>
+                        <p><b>Premium:</b> £33.99 <b>Standard:</b> £43.59</p>
+                    </div>
+
+                    <button class="mobile collapsible">Europe</button>
+                    <div class="mobile content">
+                        <p>Up to 1KG:</p>
+                        <p><b>Premium:</b> £12.00 <b>Standard:</b> £16.00</p>
+                        <br />
+                        <p>Over 1KG:</p>
+                        <p><b>Premium:</b> £25.00 <b>Standard:</b> £31.00</p>
+                        <br />
+                        <p>Over 3KG:</p>
+                        <p><b>Premium:</b> £70.00 <b>Standard:</b> £80.00</p>
+                    </div>
+
+                    <button class="mobile collapsible">USA / Canada</button>
+                    <div class="mobile content">
+                        <p>Up to 1KG:</p>
+                        <p><b>Premium:</b> £14.99 <b>Standard:</b> £22.99</p>
+                        <br />
+                        <p>Over 1KG:</p>
+                        <p><b>Premium:</b> £27.00 <b>Standard:</b> £32.00</p>
+                        <br />
+                        <p>Over 3KG:</p>
+                        <p><b>Premium:</b> £68.00 <b>Standard:</b> £78.00</p>
+                    </div>
+
+                    <button class="mobile collapsible">Rest of the World</button>
+                    <div class="mobile content">
+                        <p>Up to 1KG:</p>
+                        <p><b>Premium:</b> £20.00 <b>Standard:</b> £24.00</p>
+                        <br />
+                        <p>Over 1KG:</p>
+                        <p><b>Premium:</b> £25.00 <b>Standard:</b> £30.00</p>
+                        <br />
+                        <p>Over 3KG:</p>
+                        <p><b>Premium:</b> £80.00 <b>Standard:</b> £91.00</p>
+                    </div>
+                </div>
+
+                <div class="delivery-times">
+                    <p>Estimated delivery times are as follows:</p>
+
+                    <table>
+                        <caption>Emblem Worldwide Delivery Times Table</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" id="region">Region</th>
+                                <th scope="col" id="delivery-time">Delivery Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="first-row">
+                                <td headers="region delivery-time">UK</td>
+                                <td headers="region delivery-time">1 to 2 days</td>
+                            </tr>
+                            <tr>
+                                <td headers="region delivery-time">Europe</td>
+                                <td headers="region delivery-time">2 to 3 days</td>
+                            </tr>
+                            <tr>
+                                <td headers="region delivery-time">USA / Canada</td>
+                                <td headers="region delivery-time">3 to 5 days</td>
+                            </tr>
+                            <tr>
+                                <td headers="region delivery-time">Rest of the World:</td>
+                                <td headers="region delivery-time">5-14 Days</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    However, delivery times may differ if repair to books is requested before dispatch.
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <footer class="footer">
+            <div class="contact-details">
+                <h2>Contact Details</h2>
+                <p>Email:</p>
+                <a href="mailto:sales@emblem-rare-books.com">sales@emblem-rare-books.com</a>
+                <p>Phone:</p>
+                <a href="tel:02085556789">0208 555 6789</a>
+            </div>
+
+            <div class="footer-links">
+                <h2>information</h2>
+                <a href="#">
+                    <p>Privacy</p>
+                </a>
+                <a href="#">
+                    <p>Terms and Conditions</p>
+                </a>
+                <a href="#">
+                    <p>Returns</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

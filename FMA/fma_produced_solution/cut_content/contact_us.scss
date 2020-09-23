@@ -1,0 +1,644 @@
+/*  SCSS IMPORTS  */
+@import "general";
+@import "header";
+@import "footer";
+
+/*  General Settings  */
+
+label {
+  font-family: "avenir";
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+input {
+  font-family: "avenir";
+  font-size: 1rem;
+}
+
+
+/*  Desktop / Large Display Grid Settings  */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.25fr 0.5fr auto auto 0.01fr;
+  gap: 1px 1px;
+  grid-template-areas: "header header"
+                       "header header"
+                       "main-body-container main-body-container"
+                       "main-body-container main-body-container"
+                       "footer footer";
+  
+}
+
+.header { grid-area: header; }
+
+.footer { grid-area: footer; }
+
+.main-body-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "contact-us contact-us contact-us"
+                       "contact-form contact-form contact-form";
+  grid-area: main-body-container;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+
+  background: #F1F2F6;
+  box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+
+.contact-us, .contact-form {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.contact-us { 
+  grid-area: contact-us; 
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr auto auto auto auto auto auto;
+  gap: 1px 1px;
+  grid-template-areas: "form-heading"
+                       "row-one"
+                       "row-two"
+                       "row-three"
+                       "row-four"
+                       "row-five"
+                       "row-six";
+  grid-area: contact-form;
+}
+
+/*  Class belonging to all question labels.  */
+.bolder-label {
+  font-weight: bolder;
+  font-size: 1.4rem;
+  padding-bottom: 10px; 
+}
+
+/*  Tagets any input fields which fail HTML validation.  */
+input:invalid:focus {
+  outline: 2px solid #e74c3c;
+}
+input:valid:focus:not([type=radio]):not([type=checkbox]) {
+  outline: 2px solid #3498db;
+}
+/*  Class targetting checkboxes. Added when a checkbox is not added, is removed
+    once at least 1 interest is added. There is NO HTML5 method of validating
+    "at least 1" checkbox of a group of checkboxes is selected, thus I have
+    resorted to applying JavaScript to enforce checkbox constraint.    
+*/
+.not-selected {
+  outline: 2px solid #e74c3c;
+}
+#not-selected-message {
+  display: none;
+  color: #e74c3c;;
+  float: left;
+}
+
+.form-heading { grid-area: form-heading; }
+
+.row-one {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "title-question-label title-question-label title-question-label"
+                       "title-input . .";
+  grid-area: row-one;
+  padding-bottom: 5%;
+}
+
+.title-question-label { 
+  grid-area: title-question-label;
+}
+
+.title-input { grid-area: title-input; }
+
+.row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 30px;
+  grid-template-areas: "firstname-label surname-label ."
+                       "firstname-input surname-input .";
+  grid-area: row-two;
+  padding-bottom: 5%;
+}
+
+.firstname-label { 
+  grid-area: firstname-label;
+}
+
+.firstname-input { grid-area: firstname-input; }
+
+.surname-label { 
+  grid-area: surname-label; 
+}
+
+.surname-input { grid-area: surname-input; }
+
+.row-three {
+  @include flex-col;
+  grid-area: row-three;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+.email-label { 
+  @include flex-col; 
+}
+
+.email-input {
+  @include flex-col;
+  width: 55%;
+}
+
+.row-four {
+  @include flex-col;
+  grid-area: row-four;
+}
+
+.interests-label { 
+  grid-area: interests-label;
+  height: fit-content;
+
+}
+.interests-options {
+  grid-area: interests-options;
+  margin-top: 2%;
+  padding-bottom: 5%;
+  width: 100%;
+}
+
+.tablet-design{ display: none; }
+
+#title, .account-type, input[type=text], input[type=email] {
+  /*  Below Line overrides OSX / iOS Safari's default input styles which make input invisible to webpage  */
+  -webkit-appearance: none;
+  
+  background: #F1F2F6;
+  height: 40px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 5px;
+  font-family: "avenir";
+  
+}
+
+input[type=submit] {
+  background: linear-gradient(251deg, #236841 0%, #0BA360 100%);
+  border-radius: 5px;
+  padding: 1.5% 4% ;
+  font-family: "avenir";
+  color: #F1F2F6;
+  font-size: 2rem;
+  border: none;
+}
+
+input[type=checkbox] {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+}
+label {
+  padding-right: 5%;
+  word-wrap: break-word;
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+
+.row-five {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 30px;
+  grid-template-areas: "dealer-question account-type-question ."
+                       "dealer-question account-type-question .";
+  grid-area: row-five;
+  padding-bottom: 2%;
+}
+
+.dealer-question { 
+  grid-area: dealer-question;
+  @include flex-col; 
+}
+
+.account-type-question { 
+  grid-area: account-type-question;
+  @include flex-col; 
+}
+
+.row-six {
+  padding-top: 5%;
+  grid-area: row-six;
+  padding-bottom: 10%;
+}
+
+
+/*  Mobile CSS Adjustments  */
+
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px){
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.3fr auto auto 0.01fr;
+    gap: 1px 1px;
+    grid-template-areas: "header header"
+                        "main-body-container main-body-container"
+                        "main-body-container main-body-container"
+                        "footer footer";
+    
+  }
+  #title, .account-type, input[type=text], input[type=email] {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .row-one, .row-two, .row-three, .row-four, .row-five{
+    @include flex-col;
+
+    .bolder-label {
+      margin-top: 10%;
+      padding-bottom: 5%;
+      font-size: 1rem * 1.9;
+    }
+  }
+
+  .email-input {
+    width: 96%;
+  }
+
+  .interests-options {
+    @include flex-col;
+
+    label {
+      margin-top: 5%;
+      font-size: 1rem * 1.5;
+    }
+  }
+  
+  input {
+    background: white;
+  }
+  input[type=checkbox] { 
+    margin-top: 5%;
+    width: 50px;
+    height: 50px;
+  }
+  input[type=radio] {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+
+  .row-five {
+    div { margin-top: 5%; }
+    padding-bottom: 5%;
+  }
+
+  .row-six {
+    margin-top: 5%;
+    input { width: 100%; }
+  }
+}
+
+
+
+@media all and (-ms-high-contrast:none) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto 0.5fr;
+  }
+
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .footer {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .main-body-container {
+    margin-top: 0.5%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .contact-us {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .contact-form {
+    margin-top: 3%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto auto auto 0.5fr;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    height: 100%;
+  }
+
+  .form-heading {
+    height: fit-content !important;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .row-one {
+    margin-top: 35%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .title-question-label {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .title-input {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .row-two {
+    margin-top: 5%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .firstname-label {
+    width: 150%;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .firstname-input {
+    width: 150%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .surname-label {
+    margin-left: 200%;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  .surname-input {
+    margin-left: 100%;
+    width: 150%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  .row-three {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .email-label {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .email-input {
+    width: 150%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .row-four {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .interests-label {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .interests-options {
+    display: -ms-grid;
+    -ms-grid-columns: 200% auto auto;
+    -ms-grid-rows: auto auto;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  
+  #not-selected-message {
+    margin-top: 100%;
+  }
+
+  .row-five {
+    margin-top: 15%;
+    display: -ms-grid;
+    width: 100%;
+    -ms-grid-columns: 100% auto auto;
+    -ms-grid-rows: auto auto;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .dealer-question {
+    width: 150%;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .account-type-question {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  .row-six {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    padding-bottom: 25%;
+  }
+}
+
+
+@media all and (-ms-high-contrast:none) and (min-width: 0px) and (max-width: 767px) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto;
+  }
+
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    margin-bottom: 5%;
+  }
+
+  .main-body-container {
+    margin-top: 11%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .footer {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 1px 1px;
+    grid-template-areas: "header header"
+                        "main-body-container main-body-container"
+                        "main-body-container main-body-container"
+                        "footer footer";
+    
+  }
+
+  .main-body-container {
+    height: 95%;
+  }
+
+  .contact-form {
+    margin-top: -3%;
+  }
+
+  .footer {
+    margin-top: 22%;
+
+    .footer-links {
+      margin-top: 1%;
+    }
+  }
+
+  
+
+  .row-five { margin-top: -28%; }
+  
+  .row-one, .row-two, .row-three, .row-four, .row-five{
+    @include flex-col;
+
+    
+    .bolder-label {
+      margin-top: 10%;
+      padding-bottom: 5%;
+      font-size: 1rem * 1.9;
+    }
+  }
+
+  .row-one, .row-two, .row-three{
+    * { width: 300%; }
+  }
+
+  
+
+  .interests-options {
+    @include flex-col;
+
+    label {
+      margin-top: 5%;
+      font-size: 1rem * 1.5;
+    }
+  }
+  input[type=checkbox] { 
+    margin-top: 5%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .row-five {
+    div { margin-top: 5%; }
+    padding-bottom: 5%;
+  }
+
+  .row-six {
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+    input { width: 300%; }
+  }
+
+  .surname-label, .surname-input { margin-left: 0; }
+}

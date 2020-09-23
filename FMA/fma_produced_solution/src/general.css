@@ -1,0 +1,121 @@
+@font-face {
+  font-family: parisr;
+  src: url("fonts/parisr.ttf");
+}
+
+@font-face {
+  font-family: sweet sans;
+  src: url("fonts/sweetsans-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: avenir;
+  src: url("fonts/avenir.woff");
+}
+
+/*  SCSS VARIABLES  */
+/*  SCSS MIXIN  */
+/*  SCSS FUNCTIONS  */
+/*  GENERAL SETTINGS  */
+:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: 2.5px dotted #A8A8A8;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*  Fancy border obtained from: https://codepen.io/shanomurphy/pen/ejpVLw */
+.fancy-border {
+  border: 25px solid #B88846;
+  -o-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+}
+
+/*  Skip Links Accessibility features  */
+.skip-links a {
+  position: absolute;
+  left: -100vw;
+}
+
+.skip-links a:focus {
+  left: auto;
+  top: 0;
+  z-index: 10;
+  background-color: #A8A8A8;
+}
+
+body {
+  background: #236841;
+}
+
+a {
+  font-family: avenir;
+  text-decoration: none;
+  color: #000;
+}
+
+p, ul, li {
+  font-size: 1.25rem;
+  font-family: avenir;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "parisr";
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+hr {
+  /*  Styling CSS  */
+  background-color: #236841;
+  border: 0;
+  height: 2px;
+  /*  Layout CSS  */
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+}
+
+video {
+  padding-bottom: 1%;
+}
+
+.main-body-container {
+  max-width: 1920px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  p, ul, li {
+    font-weight: normal;
+  }
+}
+/*# sourceMappingURL=general.css.map */

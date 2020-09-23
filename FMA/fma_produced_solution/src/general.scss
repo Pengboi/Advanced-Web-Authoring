@@ -1,0 +1,165 @@
+@font-face {
+  font-family: parisr;
+  src: url("fonts/parisr.ttf");
+}
+@font-face {
+  font-family: sweet sans;
+  src: url("fonts/sweetsans-regular-webfont.woff");
+}
+@font-face {
+  font-family: avenir;
+  src: url("fonts/avenir.woff");
+}
+
+/*  SCSS VARIABLES  */
+$primary-color: #236841;
+$secondary-color: #F1F2F6;
+$mobile-bg-color: #E5E5E5;
+$box-shadow-preset: 2px 4px 30px rgba(0, 0, 0, 0.4);
+$title-size: 3rem;
+$text-size: 1.25rem;
+$featured-item-author: 1.5rem;
+$min-width: 319px;
+$default-radius-size: 20px;
+
+
+/*  SCSS MIXIN  */
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin content-heading {
+  text-align: center;
+  font-size: ($title-size * 1.2);
+  padding-bottom: 1.5rem;
+}
+
+@mixin content-text {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+@mixin set-rounded-box-background($radius-size) {
+  background: $secondary-color;
+  box-shadow: $box-shadow-preset;
+  border-radius: $radius-size;
+}
+
+@mixin set-min-width { min-width: $min-width; }
+
+/*  SCSS FUNCTIONS  */
+@function sum($numbers...) {
+  $sum: 0;
+  @each $number in $numbers {
+    $sum: $sum + $number;
+  }
+  @return $sum;
+}
+
+
+/*  GENERAL SETTINGS  */
+:focus { outline: none; }
+a:focus {outline: 2.5px dotted #A8A8A8;}
+
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*  Fancy border obtained from: https://codepen.io/shanomurphy/pen/ejpVLw */
+.fancy-border {
+  border: 25px solid #B88846;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+}
+
+
+/*  Skip Links Accessibility features  */
+.skip-links a {
+  position: absolute;
+  left: -100vw;
+}
+.skip-links a:focus {
+  left: auto;
+  top: 0;
+  z-index: 10;
+  background-color: #A8A8A8;
+}
+
+body {
+  background: $primary-color;
+}
+
+a {
+  font-family: avenir;
+  text-decoration: none;
+  color: #000;
+}
+
+p, ul, li {
+  font-size: $text-size;
+  font-family: avenir;
+  
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "parisr";
+  font-size: $title-size;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: $title-size;
+  font-weight: normal;
+}
+
+hr {
+  /*  Styling CSS  */
+  background-color: $primary-color;
+  border: 0;
+  height: 2px;
+
+  /*  Layout CSS  */
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+}
+
+video {
+  padding-bottom: 1%;
+}
+
+.main-body-container {
+  max-width: 1920px;
+  justify-self: center;
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+  p, ul, li {
+    font-weight: normal;
+  }
+}

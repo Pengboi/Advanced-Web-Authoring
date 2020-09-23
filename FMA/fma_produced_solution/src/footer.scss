@@ -1,0 +1,186 @@
+@import "general";
+
+.footer { 
+  grid-area: footer; 
+  margin-top: 5%;
+  padding-bottom: 5%;
+  @include flex-row;
+
+  * {
+    color: #F1F2F6;
+  }
+  h2 {
+    font-size: ($text-size * 1.7);
+  }
+
+  p, a {
+    font-size: ($text-size * 1.2);
+    margin-top: 0.5%;
+    line-height: 0;
+  }
+
+  a + p {
+    margin-top: 10%;
+  }
+
+  .contact-details {
+    @include flex-col;
+    margin-left: 2%;
+    
+  }
+
+  .footer-links {
+    @include flex-col;
+    margin-left: 5%;
+
+    p {
+      line-height: $text-size;
+    }
+  }
+
+  background: linear-gradient(180deg, #434343 0%, #000000 100%);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+
+}
+
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px){
+    .footer { 
+    grid-area: footer; 
+    @include flex-col;
+    
+
+    h2 {
+      font-size: ($text-size * 1.5);
+    }
+
+    p, a {
+      font-size: ($text-size);
+    }
+
+    a + p {
+      margin-top: 10%;
+    }
+
+    .contact-details {
+      @include flex-col;
+      padding-left: 2%;
+      padding-bottom: 10%;
+    }
+
+    .footer-links {
+      @include flex-col;
+      text-align: center;
+      margin: 0;
+
+      h2 { display: none; }
+
+      a:first-of-type {
+        border-top: 1px solid #F1F2F6;
+        border-bottom: 1px solid #F1F2F6;
+      }
+      a {
+        line-height: $text-size * 1.4;
+        width: 100%;
+        p { 
+          font-size: $text-size * 1.2;
+          margin-top: 5%;
+        }
+      }
+      a:last-of-type {
+        border-top: 1px solid #F1F2F6;
+        border-bottom: 1px solid #F1F2F6;
+      }
+    }
+    background: linear-gradient(180deg, #434343 0%, #000000 100%);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+
+  }
+}
+
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+                                /*  Internet Explorer/Edge 10+ Compatibility  */
+                                /*  Internet Explorer/Edge 10+ Compatibility  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */                         
+
+
+/*  Internet Explorer/Edge 10+ Compatibility : Tablet  */
+@media all and (-ms-high-contrast:none) and (min-width: 768px) and (max-width: 1280px) {
+  .footer {
+    h2 {
+      font-size: ($text-size * 1.5) !important;
+    }
+
+    .contact-details, .footer-links {
+      p, a {
+        font-size: $text-size * 1 !important;
+      }
+    }
+
+    .footer-links {
+      padding-bottom: 5% !important;
+
+    }
+    margin-bottom: 0% !important;
+  }
+}
+
+
+
+/*  Internet Explorer/Edge 10+ Compatibility : Mobile  */
+@media all and (-ms-high-contrast:none) and (min-width: 0px) and (max-width: 767px){
+  .footer { 
+    @include flex-col;
+    
+
+    h2 {
+      font-size: ($text-size * 1.5);
+    }
+
+    p, a {
+      font-size: ($text-size);
+    }
+
+    a + p {
+      margin-top: 10%;
+    }
+
+    .contact-details {
+      @include flex-col;
+      padding-left: 2%;
+      padding-bottom: 10%;
+    }
+
+    .footer-links {
+      @include flex-col;
+      text-align: center;
+      margin: 0;
+
+      h2 { display: none; }
+
+      a:first-of-type {
+        border-top: 1px solid #F1F2F6;
+        border-bottom: 1px solid #F1F2F6;
+      }
+      a {
+        line-height: $text-size * 1.4;
+        width: 100%;
+        p { 
+          font-size: $text-size * 1.2;
+          margin-top: 5%;
+        }
+      }
+      a:last-of-type {
+        border-top: 1px solid #F1F2F6;
+        border-bottom: 1px solid #F1F2F6;
+      }
+    }
+    background: linear-gradient(180deg, #434343 0%, #000000 100%);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+
+  }
+}

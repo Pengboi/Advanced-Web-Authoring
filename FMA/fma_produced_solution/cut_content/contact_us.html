@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Emblem Contact Us Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/normalize.css">
+        <link rel="stylesheet" href="src/contact_us.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="src/general_script.js"></script>
+        <script src="src/form_validation.js"></script>
+    </head>
+
+    <body>
+        <div class="grid-container" id="grid-container">
+            <div class="header">
+                <div class="logo-container">
+                    <a href="index.html"><img id="logo" alt="Emblem logo" src="src/images/emblem_logo_192.png" /></a>
+                    <div class="logo-text">
+                        <h1>Emblem</h1>
+                        <h3>Rare, Collectible Books</h3>
+                    </div>
+                    <span tabindex="0" style="font-size:30px;cursor:pointer" onclick="openNav()">
+                        <svg viewBox="0 0 100 80" width="50" height="50">
+                            <rect width="100" height="10"></rect>
+                            <rect y="30" width="100" height="10"></rect>
+                            <rect y="60" width="100" height="10"></rect>
+                        </svg>
+                    </span>
+                </div>
+
+                <div class="header-links">
+                    <a href="#">Contact us</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Login</a>
+                </div>
+
+                <div class="navigation">
+                    <hr>
+                    <div class="navbar" id="navbar">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+                        <a href="index.html" class="navigation-link">Home</a>
+                        <div onclick="window.location.href='books.html'" id="subnav" class="subnav" tabindex="0">
+                            <a class="subnavbtn">Books </a>
+                            <a class="open-subnav"><i class="arrow down"></i></a>
+                            <div class="subnav-content">
+                                <a href="#" tabindex="0">20th Century Books</a>
+                                <a href="19th_century.html">19th Century Books</a>
+                                <a href="#">18th Century Books</a>
+                                <a href="#">Rare Books</a>
+                            </div>
+                        </div>
+                        <a href="delivery.html" class="navigation-link">Delivery</a>
+                        <a href="#" class="navigation-link">About us</a>
+                        <a href="#" class="navigation-link">Books as an Investment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-body-container">
+                <div class="contact-us">
+                    <h2>Contact Us.</h2>
+                    <p> Please feel free to contact is if you are looking to buy a book not listed in our collection, or you are looking to sell
+                        a book, have a book valued or have a book repaired. <br /><br />
+                        
+                        We try to answer all queries within 24 hours of receipt. <br /> <br />
+                        
+                        <a href="mailto:sales@emblem-rare-books.com">Email: sales@emblem-rare-books.com</a><br /> <br />
+                        <a href="tel:02085556789">Phone: 0208 555 6789</a>
+                    </p>
+                </div>
+                
+                <div class="contact-form">
+                    <h2 class="form-heading">Contact Form:</h2>
+                    <form class="main-form">
+                        <div class="row-one">
+                            <label for="title" class="title-question-label bolder-label">Title:</label>
+                            <select size="1" id="title" name="title" class="title-input">
+                                <option value="">Choose</option>
+                                <option value="Mr">Mr.</option>
+                                <option value="Mrs">Mrs.</option>
+                                <option value="Miss">Miss.</option>
+                            </select>
+                        </div>
+                        <div class="row-two">
+                            <label class="firstname-label bolder-label" for="firstname">First Name:</label>
+                            <input required class="firstname-input" name="firstname" id="firstname" type="text">
+                            
+                            <label class="surname-label bolder-label" for="surname">Surname:</label>
+                            <input required class="surname-input" name="surname" id="surname" type="text">
+
+                            
+                        </div>
+                        <div class="row-three">
+                            <label class="email-label bolder-label" for="email">Email:</label>
+                            <input required class="email-input" name="email" id="email" type="email">
+                        </div>
+                        <div class="row-four">
+                            <label class="interests-label bolder-label">
+                                Interest:
+                            </label>
+                            <div class="interests-options">
+                                <label for="20th-century">
+                                    <input type="checkbox" id="20th-century" class="interests-option" name="interests-option" value="20th Century">20<sup>th</sup> Century
+                                </label>
+                                
+                                <label for="19th-century">
+                                    <input type="checkbox" id="19th-century" class="interests-option" name="interests-option" value="19th Century">19<sup>th</sup> Century
+                                </label>
+                                
+                                <label for="18th-century">
+                                    <input type="checkbox" id="18th-century" class="interests-option" name="interests-option" value="18th Century">18<sup>th</sup> Century
+                                </label>
+
+                                <br class="tablet-design" /><br class="tablet-design" />
+                                <label for="rare-books">
+                                    <input type="checkbox" id="rare-books" class="interests-option" name="interests-option" value="rare-books">Rare Books
+                                </label>
+                                <br/>
+                                <p id="not-selected-message">*Please select at least 1 interest</p>
+                            </div>
+                            
+                        </div>
+                        <div class="row-five">
+                            <div class="dealer-question">
+                                <label class="dealer-label bolder-label">Are you a dealer?</label>
+                                <div class="dealer-input">
+                                    <label for="dealer-Yes">
+                                        <input type="radio" id="dealer-Yes" name="dealer" value="Yes" checked> Yes
+                                    </label>
+                                    <label for="dealer-No">
+                                        <input type="radio" id="dealer-No" name="dealer" value="No"> No
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="account-type-question">
+                                <label for="account-type" class="account-label bolder-label">Selling or Buying?</label>
+                                <select required class="account-type" id="account-type" name="account-type">
+                                    <option value="">Choose</option>
+                                    <option value="selling">Selling</option>
+                                    <option value="buying">Buying</option>
+                                    <option value="both">Both</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row-six">
+                            <input type="submit" value="Submit">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            
+
+            <footer class="footer">
+                <div class="contact-details">
+                    <h2>Contact Details</h2>
+                    <p>Email:</p>
+                    <a href="mailto:sales@emblem-rare-books.com">sales@emblem-rare-books.com</a>
+                    <p>Phone:</p>
+                    <a href="tel:02085556789">0208 555 6789</a>
+                </div>
+
+                <div class="footer-links">
+                    <h2>information</h2>
+                    <a href="#">
+                        <p>Privacy</p>
+                    </a>
+                    <a href="#">
+                        <p>Terms and Conditions</p>
+                    </a>
+                    <a href="#">
+                        <p>Returns</p>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </body>
+
+</html>

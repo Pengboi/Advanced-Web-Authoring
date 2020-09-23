@@ -1,0 +1,78 @@
+
+
+<!-- Delivery Table for laptop/tablet with column oriented design. -->
+
+<table id="compact-delivery-pricing">
+    <caption>Emblem Worldwide Delivery Pricing Table</caption>
+    <colgroup span="2"></colgroup>
+    <col>
+    <col>
+    <thead>
+        <tr>
+            <th colspan="2" scope="colgroup">Shipping Type</th>
+            <th scope="col">UK</th>
+            <th scope="col">Europe</th>
+            <th scope="col">USA / Canada</th>
+            <th scope="col">Rest of the World</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th rowspan="2" scope="rowgroup">Up to 1kg</th>
+            <th>Premium</th>
+            <td>£5.99</td>
+            <td>£12.00</td>
+            <td>£14.99</td>
+            <td>£20.00</td>
+        </tr>
+        <tr>
+            <th>Standard</th>
+            <td>£9.99</td>
+            <td>£16.00</td>
+            <td>£22.99</td>
+            <td>£24.00</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th rowspan="2" scope="rowgroup">Over 1kg</th>
+            <th>Premium</th>
+            <td>£11.59</td>
+            <td>£25.00</td>
+            <td>£27.00</td>
+            <td>£25.00</td>
+        </tr>
+        <tr>
+            <th>Standard</th>
+            <td>£16.59</td>
+            <td>£31.00</td>
+            <td>£32.00</td>
+            <td>£30.00</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th rowspan="2" scope="rowgroup">Over 3kg</th>
+            <th>Premium</th>
+            <td>£33.99</td>
+            <td>£70.00</td>
+            <td>£68.00</td>
+            <td>£80.00</td>
+        </tr>
+        <tr>
+            <th>Standard</th>
+            <td>£43.99</td>
+            <td>£80.00</td>
+            <td>£91.00</td>
+            <td>£91.00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                Deliveries are undertaken where appropriate by specialist fragile and valuable goods
+                handlers. All goods are sent first-class to both the UK and abroad.
+            </td>
+        </tr>
+    </tfoot>
+</table>

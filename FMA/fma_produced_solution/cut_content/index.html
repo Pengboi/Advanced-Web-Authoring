@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Emblem Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/normalize.css">
+    <link rel="stylesheet" href="src/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/general_script.js"></script>
+</head>
+
+<body>
+    <div class="grid-container" id="grid-container">
+        <header class="header">
+            <div class="logo-container">
+                <a href="#"><img id="logo" alt="Emblem logo" src="src/images/emblem_logo_192.png" /></a>
+                <div class="logo-text">
+                    <h1>Emblem</h1>
+                    <h3>Rare, Collectible Books</h3>
+                </div>
+
+                <nav class="mobile-navigation">
+                    <input type="checkbox">
+                    <span tabindex="0" style="font-size:30px;cursor:pointer" onclick="openNav()">
+                        <svg viewBox="0 0 100 80" width="50" height="50">
+                            <rect width="100" height="10"></rect>
+                            <rect y="30" width="100" height="10"></rect>
+                            <rect y="60" width="100" height="10"></rect>
+                        </svg>
+                    </span>
+                </nav>
+
+            </div>
+
+
+
+            <nav class="header-links">
+                <a href="contact_us.html">Contact us</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Login</a>
+            </nav>
+
+            <nav class="navigation">
+                <hr>
+                <nav class="navbar" id="navbar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+                    <a href="#" class="navigation-link">Home</a>
+                    <div onclick="window.location.href='books.html'" id="subnav" class="subnav" tabindex="0">
+                        <a class="subnavbtn">Books </a>
+                        <a class="open-subnav"><i class="arrow down"></i></a>
+                        <div class="subnav-content">
+                            <a href="#" tabindex="0">20th Century Books</a>
+                            <a href="19th_century.html">19th Century Books</a>
+                            <a href="#">18th Century Books</a>
+                            <a href="#">Rare Books</a>
+                        </div>
+                    </div>
+                    <a href="delivery.html" class="navigation-link">Delivery</a>
+                    <a href="#" class="navigation-link">About us</a>
+                    <a href="#" class="navigation-link">Books as an Investment</a>
+                </nav>
+            </nav>
+        </header>
+
+        <div class="introduction-container">
+            <div class="video-container">
+                <h2>Our Warehouse!</h2>
+                <video controls title="video of Emblem Warehouse">
+                    <source src="src/videos/emblem_video_480x360.mp4" type="video/mp4">
+                    <source src="src/videos/emblem_video_480x360.ogg" type="video/ogg">
+                    <source src="src/videos/emblem_video_480x360.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="book-of-the-month">
+            <h2>Book of the month</h2>
+
+            <div id="book-details">
+                <div id="monthly-book-information">
+                    <h2>The heart of the matter</h2>
+                    <h2>By Graham Greene</h2>
+                    <p> 1900 copy. One of only 50 published in this edition. Excellent condition in its original blue
+                        cloth with
+                        publisher’s
+                        device stamped on cover. <br /><br />
+
+                        This book represents an excellent investment, and is expected to appreciate in value by 6% over
+                        the next
+                        three
+                        years.
+                        <br /><br />
+
+                        Contact us for price.
+                    </p>
+                </div>
+                <div class="image-container">
+                    <a href="#"><img alt="The Heart Of The Matter by Graham Greene book cover"
+                            src="src/images/heart_of_the_matter.jpg"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="information-container">
+            <div class="information-content">
+                <h2>Buying Books</h2>
+                <p>
+                    Emblem are always looking to buy rare books. We offer very competitive prices for appropriate books.
+                    All you need to do
+                    is contact us with details of the book or collection you are looking to sell. <br /><br />
+
+                    We will need to know the following information:
+                </p>
+                <ul>
+                    <li>Author</li>
+                    <li>Title (exactly as it appears on the title page)</li>
+                    <li>Publisher and publication date</li>
+                    <li>Edition (if known)</li>
+                    <li>Brief description of the binding (cloth boards, leather-bound, with or lacking dustwrapper)</li>
+                    <li>Description of the overall condition of the book, including any major defects</li>
+                </ul>
+                <p>If the book meets our requirements, we will contact you for more details.</p>
+            </div>
+
+            <div class="information-content">
+                <h2>Selling Books</h2>
+                <p>
+                    Emblem sells rare and collectable fiction and poetry. We are particularly interested in 18th and
+                    19th century books, and
+                    have a world-renowned stock of latter 19th century women’s writing. Of particular interest are first
+                    editions, private
+                    press editions, and author signed copies. <br /><br />
+
+                    We also provide a restoration service, and consultancy on investment in rare books. <br /><br />
+
+                    We issue printed and illustrated catalogues of rare books twice a year. We also exhibit at book
+                    fairs in the UK, New
+                    Zealand, Canada and the USA.
+                </p>
+            </div>
+            <div class="information-content">
+                <h2>Valuing Books</h2>
+                <p>
+                    If you possess books you wish to sell then a formal valuation the most appropriate course of action.
+                    Emblem undertakes
+                    written valuations for insurance purposes or personal interest. We can appraise a single books or
+                    collections. <br /><br />
+
+                    If you wish to have a book valued, a free initial verbal assessment of whether the book is likely to
+                    have sufficient
+                    value to merit a full valuation is recommended. If you decide to go ahead with the
+                    valuation,<br /><br />
+
+                    Emblem will provide you with an estimate of the cost before the valuation is carried out in full.
+                    Fees for valuation
+                    work are charged at a half day rate of £300.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="featured-items">
+            <h2>Featured-Items</h2>
+            <div class="featured-items-container">
+                <div>
+                    <a href="#"><img alt="Rumor at Nightfall by Graham Greene book cover"
+                            src="src/images/rumpour_at_nightfall.jpeg"></a>
+                    <h3>Rumor at Nightfall</h3>
+                    <h4>By Graham Greene</h4>
+                </div>
+
+                <div>
+                    <a href="#"><img alt="Ulysses by James Joyce book cover" src="src/images/ulysses.jpeg"></a>
+                    <h3>Ulysses</h3>
+                    <h4>By James Joyce</h4>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="contact-details">
+                <h2>Contact Details</h2>
+                <p>Email:</p>
+                <a href="mailto:sales@emblem-rare-books.com">sales@emblem-rare-books.com</a>
+                <p>Phone:</p>
+                <a href="tel:02085556789">0208 555 6789</a>
+            </div>
+
+            <div class="footer-links">
+                <h2>information</h2>
+                <a href="#">
+                    <p>Privacy</p>
+                </a>
+                <a href="#">
+                    <p>Terms and Conditions</p>
+                </a>
+                <a href="#">
+                    <p>Returns</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

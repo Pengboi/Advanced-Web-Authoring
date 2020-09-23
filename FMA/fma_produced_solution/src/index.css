@@ -1,0 +1,2332 @@
+/*  SCSS Partial Imports  */
+@font-face {
+  font-family: parisr;
+  src: url("fonts/parisr.ttf");
+}
+
+@font-face {
+  font-family: sweet sans;
+  src: url("fonts/sweetsans-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: avenir;
+  src: url("fonts/avenir.woff");
+}
+
+/*  SCSS VARIABLES  */
+/*  SCSS MIXIN  */
+/*  SCSS FUNCTIONS  */
+/*  GENERAL SETTINGS  */
+:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: 2.5px dotted #A8A8A8;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*  Fancy border obtained from: https://codepen.io/shanomurphy/pen/ejpVLw */
+.fancy-border {
+  border: 25px solid #B88846;
+  -o-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+}
+
+/*  Skip Links Accessibility features  */
+.skip-links a {
+  position: absolute;
+  left: -100vw;
+}
+
+.skip-links a:focus {
+  left: auto;
+  top: 0;
+  z-index: 10;
+  background-color: #A8A8A8;
+}
+
+body {
+  background: #236841;
+}
+
+a {
+  font-family: avenir;
+  text-decoration: none;
+  color: #000;
+}
+
+p, ul, li {
+  font-size: 1.25rem;
+  font-family: avenir;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "parisr";
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+hr {
+  /*  Styling CSS  */
+  background-color: #236841;
+  border: 0;
+  height: 2px;
+  /*  Layout CSS  */
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+}
+
+video {
+  padding-bottom: 1%;
+}
+
+.main-body-container {
+  max-width: 1920px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  p, ul, li {
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  font-family: parisr;
+  src: url("fonts/parisr.ttf");
+}
+
+@font-face {
+  font-family: sweet sans;
+  src: url("fonts/sweetsans-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: avenir;
+  src: url("fonts/avenir.woff");
+}
+
+/*  SCSS VARIABLES  */
+/*  SCSS MIXIN  */
+/*  SCSS FUNCTIONS  */
+/*  GENERAL SETTINGS  */
+:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: 2.5px dotted #A8A8A8;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*  Fancy border obtained from: https://codepen.io/shanomurphy/pen/ejpVLw */
+.fancy-border {
+  border: 25px solid #B88846;
+  -o-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+}
+
+/*  Skip Links Accessibility features  */
+.skip-links a {
+  position: absolute;
+  left: -100vw;
+}
+
+.skip-links a:focus {
+  left: auto;
+  top: 0;
+  z-index: 10;
+  background-color: #A8A8A8;
+}
+
+body {
+  background: #236841;
+}
+
+a {
+  font-family: avenir;
+  text-decoration: none;
+  color: #000;
+}
+
+p, ul, li {
+  font-size: 1.25rem;
+  font-family: avenir;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "parisr";
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+hr {
+  /*  Styling CSS  */
+  background-color: #236841;
+  border: 0;
+  height: 2px;
+  /*  Layout CSS  */
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+}
+
+video {
+  padding-bottom: 1%;
+}
+
+.main-body-container {
+  max-width: 1920px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  p, ul, li {
+    font-weight: normal;
+  }
+}
+
+.header > * {
+  margin-top: 1%;
+}
+
+.menu-wrapper {
+  visibility: hidden;
+  display: none;
+}
+
+.header {
+  /*  Styling CSS  */
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#DFE9F3));
+  background: linear-gradient(180deg, #FFFFFF 0%, #DFE9F3 100%);
+  -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+  /*  Layout CSS */
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -ms-grid;
+  display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1.5fr 0.5fr;
+      grid-template-areas: "logo-container logo-container header-links" "navigation navigation navigation";
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+}
+
+.header hr {
+  background: #236841;
+}
+
+.logo-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: logo-container;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 1%;
+}
+
+.logo-container img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo-container span {
+  display: none;
+}
+
+.logo-container .logo-text {
+  top: 0;
+  height: auto;
+  position: relative;
+}
+
+.logo-container .logo-text h1, .logo-container .logo-text h3 {
+  line-height: 10px;
+  font-family: "parisr";
+}
+
+.header-links {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: header-links;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 5%;
+  padding-right: 10%;
+}
+
+.header-links a {
+  /*  Styling CSS  */
+  text-decoration: none;
+  color: #236841;
+  font-family: "avenir";
+  font-size: 1.2rem;
+  /*  Layout CSS  */
+  margin: 1% 5%;
+}
+
+.navigation {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: navigation;
+}
+
+.navigation .navbar {
+  /*  Styling CSS  */
+  width: 100%;
+  font-size: 1.4rem;
+  font-family: "sweet sans";
+  /*  Layout CSS  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  padding-bottom: 1%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  overflow: hidden;
+}
+
+/*  Media Query for Tablet + Laptop displays  */
+@media (min-width: 768px) and (max-width: 1280px) {
+  h2 {
+    font-size: 2.2rem;
+  }
+  .header-links > a {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .logo-text h1 {
+    font-size: 4rem;
+  }
+  .logo-text h3 {
+    font-size: 1.25rem;
+  }
+  .navigation {
+    visibility: visible;
+  }
+  .navbar {
+    /*  Styling CSS  */
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: "sweet sans";
+    /*  Layout CSS  */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 1%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    overflow: hidden;
+  }
+  .navbar * {
+    font-size: 1.2rem;
+  }
+  .logo-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    /*
+      **  As Firefox and Internet Explorer do not allow content to adapt the image source
+      **  used through CSS, alternative approaches were required. Below a background image
+      **  is set to the HTML defined source image of the Emblem logo. The background image
+      **  contains the desired logo size. The width and height of the 'image' is then set
+      **  to 0 and padding is added to the borders of the img element.
+      **  This 'hides' the original size logo, whilst displaying the 'background' containing
+      **  the desired size logo. 
+      **  
+      **  This solution was inspired by the following link:
+      **  https://stackoverflow.com/questions/18483024/replace-content-of-img-via-css
+      */
+  }
+  .logo-container img {
+    background: url("images/emblem_logo_160.png") no-repeat;
+    width: 0;
+    height: 0;
+    padding: 70px 90px;
+  }
+  .logo-container h3 {
+    font-size: 2.1rem;
+  }
+}
+
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px) {
+  /**
+  * Below navigation solution for mobile nav was inspired by Tyler Potts' CSS only solution.
+  * The work differs from the original solution and has been adapted to be suitable for its 
+  * current application. Link mentioned as reference to where work is based off of:
+  *
+  * Original Solution link: https://github.com/TylerPottsDev/css-only-hamburger-menu
+  *
+  * Side note: I would also like to state the lecture slides discussing mobile navigation
+  * were not working and links to examples often returned error 404s
+  */
+  .menu-wrapper {
+    display: block;
+    visibility: visible;
+    position: fixed;
+    top: 35px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .menu-wrapper .toggle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .menu-wrapper .hamburger {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .menu-wrapper .hamburger .bar {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: #DFE9F3;
+    z-index: 5;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+  .menu-wrapper .hamburger .bar::before,
+  .menu-wrapper .hamburger .bar::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 3px;
+    background: #DFE9F3;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+  .menu-wrapper .hamburger .bar::after {
+    top: 10px;
+  }
+  .menu-wrapper .toggle:hover + .hamburger {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+  .menu-wrapper .toggle:checked + .hamburger {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .menu-wrapper .toggle:checked:hover + .hamburger {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  .menu-wrapper .toggle:checked + .hamburger .bar::before,
+  .menu-wrapper .toggle:checked + .hamburger .bar::after {
+    top: 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background: rgba(25, 25, 25, 0.95);
+    width: 100vw;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .mobile-menu ul li {
+    color: #DFE9F3;
+    font-size: 2rem;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    width: 100vw;
+    margin: -5%;
+  }
+  .mobile-menu a {
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    font-size: 2rem;
+    width: 100%;
+    margin-top: 20%;
+    overflow: hidden;
+    color: #E5E5E5;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    display: block;
+  }
+  .mobile-menu ul li:hover {
+    border-bottom: 2px solid #236841;
+  }
+  .mobile-menu ul li:hover a {
+    color: #236841;
+  }
+  .menu-wrapper .toggle:checked + .hamburger + .mobile-menu {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+  }
+  .header {
+        grid-template-rows: auto auto;
+        grid-template-areas: "logo-container logo-container logo-container" "header-links header-links header-links";
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: header;
+    top: 0;
+    display: inline;
+    position: fixed;
+    z-index: 10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0BA360), to(#236841));
+    background: linear-gradient(180deg, #0BA360 0%, #236841 100%);
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  .header .logo-container {
+    padding-top: 5%;
+    /*
+      **  As Firefox and Internet Explorer do not allow content to adapt the image source
+      **  used through CSS, alternative approaches were required. Below a background image
+      **  is set to the HTML defined source image of the Emblem logo. The background image
+      **  contains the desired logo size. The width and height of the 'image' is then set
+      **  to 0 and padding is added to the borders of the img element.
+      **  This 'hides' the original size logo, whilst displaying the 'background' containing
+      **  the desired size logo. 
+      **  
+      **  This solution was inspired by the following link:
+      **  https://stackoverflow.com/questions/18483024/replace-content-of-img-via-css
+      */
+    width: 100%;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding-bottom: 2%;
+  }
+  .header .logo-container h3 {
+    display: none;
+  }
+  .header .logo-container img {
+    background: url("images/emblem_logo_96.png") no-repeat;
+    width: 0;
+    height: 0;
+    padding: 40px 50px;
+  }
+  .header .logo-container span {
+    display: block;
+    position: absolute;
+    right: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-right: 5%;
+    padding-top: 15px;
+  }
+  .header .logo-container .mobile-navigation input[type=checkbox] {
+    opacity: 50%;
+    display: block;
+    position: absolute;
+    right: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-right: 5%;
+    padding-top: 15px;
+  }
+  .header .logo-text h1 {
+    font-size: 2.5rem !important;
+  }
+  .header .header-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    border-top: 1px solid #000;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+  }
+  .header .header-links a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #DFE9F3;
+    margin: 0 3%;
+    line-height: 0;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .navbar {
+    display: none;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+  #nav-toggle-open:checked {
+    opacity: 100%;
+  }
+  #nav-toggle-open:checked .navbar {
+    width: 250px;
+  }
+}
+
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  Internet Explorer/Edge 10+ Compatibility  */
+/*  Internet Explorer/Edge 10+ Compatibility  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  Internet Explorer/Edge 10+ Compatibility : PC + Desktop  */
+@media all and (-ms-high-contrast: none) and (min-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+  .header {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1.4fr 0.4fr;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .header img {
+    -ms-interpolation-mode: bicubic;
+    min-width: 300px;
+  }
+  .header h1 {
+    font-size: 7rem;
+  }
+  .header h3 {
+    font-size: 3.5rem;
+    line-height: 5rem;
+  }
+  .navbar {
+    /*  Styling CSS  */
+    font-size: 1.5rem !important;
+    font-family: "sweet sans";
+    /*  Layout CSS  */
+    display: inline-block;
+    margin: 5%;
+    padding-top: 1%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    overflow: hidden;
+  }
+  .navbar a {
+    margin: 0 3%;
+    text-align: center;
+  }
+  .header-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    z-index: 100;
+    margin-left: 1%;
+    margin-right: 1%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+  .header-links > a {
+    z-index: 100;
+    text-align: right;
+    height: 100%;
+    font-size: 1rem !important;
+  }
+  .logo-container {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .header-links {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
+  .navigation {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  .navigation .navbar {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .navigation .navbar .navigation-link:nth-of-type(2) {
+    margin-left: 5%;
+  }
+  .navigation .navbar .navigation-link:last-of-type {
+    margin-right: 5%;
+  }
+  .navigation .navbar a {
+    font-size: 1.125rem !important;
+  }
+}
+
+/*  Internet Explorer/Edge 10+ Compatibility : Tablet  */
+@media all and (-ms-high-contrast: none) and (min-width: 768px) and (max-width: 1280px) {
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .header #logo {
+    -ms-interpolation-mode: bicubic;
+  }
+  .header h1 {
+    padding-top: 3%;
+    font-size: 6rem;
+  }
+  .header h3 {
+    font-size: 3.5rem;
+  }
+  .header .logo-container img {
+    width: 10px;
+  }
+  .header .header-links > a {
+    text-align: center;
+  }
+  .navigation {
+    visibility: visible;
+  }
+  .navigation a, .navigation button {
+    font-size: 1.25rem;
+    padding: 0;
+    color: #000;
+  }
+  .navbar {
+    /*  Styling CSS  */
+    font-size: 1.5rem !important;
+    font-family: "sweet sans";
+    /*  Layout CSS  */
+    display: inline-block;
+    margin: 5%;
+    padding-top: 1%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    overflow: hidden;
+  }
+  .navbar a {
+    margin: 0 3%;
+    text-align: center;
+  }
+  .logo-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .logo-container img {
+    margin-top: 10%;
+    padding: 60px 0px;
+  }
+  .logo-container h1 {
+    margin-left: -40%;
+  }
+  .logo-container h3 {
+    margin-left: -40%;
+    font-size: 2.1rem;
+  }
+}
+
+/*  Internet Explorer/Edge 10+ Compatibility : Mobile  */
+@media all and (-ms-high-contrast: none) and (min-width: 0px) and (max-width: 767px) {
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .header-links a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #DFE9F3;
+    margin: 0 3%;
+    line-height: 0;
+    font-size: 1.5rem !important;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@font-face {
+  font-family: parisr;
+  src: url("fonts/parisr.ttf");
+}
+
+@font-face {
+  font-family: sweet sans;
+  src: url("fonts/sweetsans-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: avenir;
+  src: url("fonts/avenir.woff");
+}
+
+/*  SCSS VARIABLES  */
+/*  SCSS MIXIN  */
+/*  SCSS FUNCTIONS  */
+/*  GENERAL SETTINGS  */
+:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: 2.5px dotted #A8A8A8;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*  Fancy border obtained from: https://codepen.io/shanomurphy/pen/ejpVLw */
+.fancy-border {
+  border: 25px solid #B88846;
+  -o-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 27;
+}
+
+/*  Skip Links Accessibility features  */
+.skip-links a {
+  position: absolute;
+  left: -100vw;
+}
+
+.skip-links a:focus {
+  left: auto;
+  top: 0;
+  z-index: 10;
+  background-color: #A8A8A8;
+}
+
+body {
+  background: #236841;
+}
+
+a {
+  font-family: avenir;
+  text-decoration: none;
+  color: #000;
+}
+
+p, ul, li {
+  font-size: 1.25rem;
+  font-family: avenir;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "parisr";
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+hr {
+  /*  Styling CSS  */
+  background-color: #236841;
+  border: 0;
+  height: 2px;
+  /*  Layout CSS  */
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+}
+
+video {
+  padding-bottom: 1%;
+}
+
+.main-body-container {
+  max-width: 1920px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  p, ul, li {
+    font-weight: normal;
+  }
+}
+
+.footer {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  margin-top: 5%;
+  padding-bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: -webkit-gradient(linear, left top, left bottom, from(#434343), to(#000000));
+  background: linear-gradient(180deg, #434343 0%, #000000 100%);
+  -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+}
+
+.footer * {
+  color: #F1F2F6;
+}
+
+.footer h2 {
+  font-size: 2.125rem;
+}
+
+.footer p, .footer a {
+  font-size: 1.5rem;
+  margin-top: 0.5%;
+  line-height: 0;
+}
+
+.footer a + p {
+  margin-top: 10%;
+}
+
+.footer .contact-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 2%;
+}
+
+.footer .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+}
+
+.footer .footer-links p {
+  line-height: 1.25rem;
+}
+
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px) {
+  .footer {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: footer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: -webkit-gradient(linear, left top, left bottom, from(#434343), to(#000000));
+    background: linear-gradient(180deg, #434343 0%, #000000 100%);
+    -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+  }
+  .footer h2 {
+    font-size: 1.875rem;
+  }
+  .footer p, .footer a {
+    font-size: 1.25rem;
+  }
+  .footer a + p {
+    margin-top: 10%;
+  }
+  .footer .contact-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 2%;
+    padding-bottom: 10%;
+  }
+  .footer .footer-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+  .footer .footer-links h2 {
+    display: none;
+  }
+  .footer .footer-links a:first-of-type {
+    border-top: 1px solid #F1F2F6;
+    border-bottom: 1px solid #F1F2F6;
+  }
+  .footer .footer-links a {
+    line-height: 1.75rem;
+    width: 100%;
+  }
+  .footer .footer-links a p {
+    font-size: 1.5rem;
+    margin-top: 5%;
+  }
+  .footer .footer-links a:last-of-type {
+    border-top: 1px solid #F1F2F6;
+    border-bottom: 1px solid #F1F2F6;
+  }
+}
+
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  Internet Explorer/Edge 10+ Compatibility  */
+/*  Internet Explorer/Edge 10+ Compatibility  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  Internet Explorer/Edge 10+ Compatibility : Tablet  */
+@media all and (-ms-high-contrast: none) and (min-width: 768px) and (max-width: 1280px) {
+  .footer {
+    margin-bottom: 0% !important;
+  }
+  .footer h2 {
+    font-size: 1.875rem !important;
+  }
+  .footer .contact-details p, .footer .contact-details a, .footer .footer-links p, .footer .footer-links a {
+    font-size: 1.25rem !important;
+  }
+  .footer .footer-links {
+    padding-bottom: 5% !important;
+  }
+}
+
+/*  Internet Explorer/Edge 10+ Compatibility : Mobile  */
+@media all and (-ms-high-contrast: none) and (min-width: 0px) and (max-width: 767px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: -webkit-gradient(linear, left top, left bottom, from(#434343), to(#000000));
+    background: linear-gradient(180deg, #434343 0%, #000000 100%);
+    -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+  }
+  .footer h2 {
+    font-size: 1.875rem;
+  }
+  .footer p, .footer a {
+    font-size: 1.25rem;
+  }
+  .footer a + p {
+    margin-top: 10%;
+  }
+  .footer .contact-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 2%;
+    padding-bottom: 10%;
+  }
+  .footer .footer-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+  .footer .footer-links h2 {
+    display: none;
+  }
+  .footer .footer-links a:first-of-type {
+    border-top: 1px solid #F1F2F6;
+    border-bottom: 1px solid #F1F2F6;
+  }
+  .footer .footer-links a {
+    line-height: 1.75rem;
+    width: 100%;
+  }
+  .footer .footer-links a p {
+    font-size: 1.5rem;
+    margin-top: 5%;
+  }
+  .footer .footer-links a:last-of-type {
+    border-top: 1px solid #F1F2F6;
+    border-bottom: 1px solid #F1F2F6;
+  }
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+/*  Desktop / Large Display Grid Settings  */
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -ms-grid-rows: auto auto auto auto auto auto 0.6fr;
+      grid-template-rows: auto auto auto auto auto auto 0.6fr;
+  gap: 5px 1px;
+      grid-template-areas: "header header" "header header" "introduction-container introduction-container" "book-of-the-month book-of-the-month" "information-container information-container" "featured-items featured-items" "footer footer";
+}
+
+.introduction-container {
+  background: #F1F2F6;
+  width: 100%;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: introduction-container;
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+
+.introduction-container .video-container > h2 {
+  line-height: 1px;
+  text-align: center;
+  font-size: 3.6rem;
+  padding-bottom: 1.5rem;
+}
+
+.information-container, .book-of-the-month {
+  background: #F1F2F6;
+  -webkit-box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  max-width: 1920px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.book-of-the-month {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: book-of-the-month;
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 94vw;
+}
+
+.book-of-the-month * {
+  margin: 0 5%;
+  text-align: left;
+}
+
+.book-of-the-month > h2 {
+  margin-top: 2%;
+  text-align: center;
+  text-align: center;
+  font-size: 3.6rem;
+  padding-bottom: 1.5rem;
+}
+
+#book-details {
+  margin: 5% 10%;
+  padding-bottom: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#book-details #monthly-book-information {
+  margin-top: 0%;
+  vertical-align: top;
+  margin-right: -5%;
+  margin-left: 0;
+}
+
+#book-details #monthly-book-information h2 {
+  font-family: "avenir";
+  width: 90%;
+}
+
+#book-details #monthly-book-information h2:not(:first-child) {
+  font-size: 2.4rem;
+}
+
+#book-details #monthly-book-information p {
+  width: 76%;
+  font-size: 1.4rem;
+  margin-top: 4%;
+}
+
+#book-details img {
+  float: right;
+  height: 400px;
+  width: 280px;
+}
+
+.featured-items {
+  margin-top: 3%;
+  background: #F1F2F6;
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: featured-items;
+}
+
+.featured-items > h2:first-of-type {
+  text-align: center;
+  font-size: 3.6rem;
+  padding-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.featured-items-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.featured-items-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+}
+
+.featured-items-container div img {
+  width: 200px;
+  height: 300px;
+}
+
+.featured-items-container div h3 {
+  font-family: "avenir";
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+.featured-items-container div h4 {
+  margin-top: 2%;
+  font-family: "avenir";
+  font-size: 1.5rem;
+}
+
+.information-container {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: information-container;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 94vw;
+  margin-top: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.information-container .information-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 1%;
+  width: 32%;
+  padding-bottom: 3%;
+}
+
+.information-container .information-content h2 {
+  text-align: center;
+  font-size: 3.6rem;
+  padding-bottom: 1.5rem;
+  margin-top: 1%;
+  margin-bottom: 0;
+}
+
+.information-container .information-content p, .information-container .information-content ul {
+  margin-top: 0;
+  font-size: 1.275rem;
+  text-align: justify;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.information-container .information-content ul {
+  margin-left: 0;
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+/*  Media Query for Tablet + Laptop displays  */
+@media (min-width: 768px) and (max-width: 1280px) {
+  hr {
+    background-color: #000;
+  }
+  h2 {
+    font-size: 3.08rem;
+  }
+  .grid-container {
+        grid-template-areas: "header header" "header header" "introduction-container information-container" "book-of-the-month information-container" "featured-items featured-items" "footer footer";
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto auto 0.1fr;
+        grid-template-rows: auto auto auto auto auto 0.1fr;
+  }
+  .book-of-the-month, .featured-items {
+    /*  Styling CSS  */
+    background: #F1F2F6;
+    -webkit-box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 95%;
+  }
+  .introduction-container {
+    /*  Styling CSS  */
+    background: #F1F2F6;
+    -webkit-box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 95%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 5%;
+  }
+  .introduction-container .video-container h2 {
+    font-size: 3.08rem !important;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+  .introduction-container video {
+    width: 80%    !important;
+    height: auto   !important;
+  }
+  .book-of-the-month {
+    margin: 0;
+    margin-left: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .book-of-the-month h2 {
+    font-size: 3.08rem;
+  }
+  .book-of-the-month #book-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 5% 15%;
+  }
+  .book-of-the-month #book-details #monthly-book-information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .book-of-the-month #book-details #monthly-book-information h2:first-of-type {
+    font-size: 1.848rem;
+  }
+  .book-of-the-month #book-details #monthly-book-information h2 {
+    font-size: 1.54rem;
+  }
+  .book-of-the-month #book-details #monthly-book-information p {
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+  .book-of-the-month #book-details .image-container {
+    margin-top: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    float: none;
+  }
+  .book-of-the-month #book-details .image-container img {
+    width: auto;
+    height: 280px;
+  }
+  .featured-items {
+    width: 100%;
+    border-radius: 0;
+  }
+  .featured-items h2 {
+    font-size: 0.616rem;
+  }
+  .featured-items .featured-items-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .featured-items .featured-items-container div img {
+    width: 150px;
+    height: 200px;
+  }
+  .featured-items .featured-items-container div h3 {
+    font-size: 1.8rem;
+  }
+  .featured-items .featured-items-container div h4 {
+    font-size: 1.5rem;
+  }
+  .featured-items h2 {
+    font-size: 0.616rem;
+  }
+  .featured-items .featured-items-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .featured-items .featured-items-container div img {
+    width: 150px;
+    height: 200px;
+  }
+  .featured-items .featured-items-container div h3 {
+    font-size: 1.8rem;
+  }
+  .featured-items .featured-items-container div h4 {
+    font-size: 1.5rem;
+  }
+  .information-container {
+    height: 98%;
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 93%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .information-container .information-content {
+    width: 100%;
+    padding-bottom: 20%;
+  }
+  .information-container .information-content h2 {
+    font-size: 3.08rem;
+  }
+  .information-container .information-content li, .information-container .information-content p {
+    font-size: 1rem;
+    margin-right: 5%;
+  }
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px) {
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    overflow: hidden;
+    -ms-grid-rows: 0.10fr auto auto 1.91fr 0.3fr;
+        grid-template-rows: 0.10fr auto auto 1.91fr 0.3fr;
+    gap: 5px 1px;
+    margin-left: 0;
+        grid-template-areas: "header" "introduction-container" "book-of-the-month" "information-container" "featured-items" "footer";
+    background: #E5E5E5;
+  }
+  header, body, .introduction-container, .book-of-the-month, .information-container,
+  .featured-items, footer {
+    min-width: 319px;
+  }
+  .introduction-container {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: introduction-container;
+    margin-top: 5%;
+    padding-top: 15%;
+    color: #E5E5E5;
+    background: #236841;
+    margin: 0;
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+  }
+  .introduction-container video {
+    width: 80%;
+  }
+  .video-container h2 {
+    /*  Text is set to 30px + 5% of the viewwidth however, should this cause overflow, the calc() function
+      **  will use the min value (30px) and disregard the +5vw - this prevents the video container heading
+      **  from overflow regardless of the display size.
+      */
+    font-size: calc(30px + 5vw) !important;
+    line-height: 150%;
+  }
+  .book-of-the-month, .information-container, .featured-items {
+    margin: 0 2%;
+    background: none;
+    border: 0px;
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 0;
+  }
+  .book-of-the-month {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: book-of-the-month;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .book-of-the-month h2 {
+    margin-left: 10%;
+  }
+  .book-of-the-month #book-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .book-of-the-month #book-details #monthly-book-information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 1%;
+  }
+  .book-of-the-month #book-details #monthly-book-information h2 {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .book-of-the-month #book-details #monthly-book-information p {
+    width: 100%;
+    margin-top: 10%;
+    margin-left: 0;
+    text-align: justify;
+  }
+  .book-of-the-month #book-details .image-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    float: none;
+    /* Responsive image for mobile design. */
+  }
+  .book-of-the-month #book-details .image-container img {
+    width: auto;
+    height: 280px;
+  }
+  #monthly-book-information h2:first-of-type {
+    font-size: 2.6rem !important;
+  }
+  #monthly-book-information h2:last-of-type {
+    font-size: 1.4rem !important;
+    margin-top: 5%;
+  }
+  .information-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 10%;
+  }
+  .information-container .information-content {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .featured-items-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  Internet Explorer/Edge 10+ Compatibility  */
+/*  Internet Explorer/Edge 10+ Compatibility  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  Internet Explorer/Edge 10+ Compatibility : PC + Desktop  */
+@media all and (-ms-high-contrast: none) {
+  p, li, a {
+    font-weight: normal;
+    font-size: 2rem !important;
+  }
+  li {
+    margin-left: 2%;
+  }
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto auto 1fr 0.6fr;
+  }
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .introduction-container {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .book-of-the-month {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .information-container {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .featured-items {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .footer {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    padding-bottom: 5%;
+    margin-top: 15%;
+    margin-bottom: 0;
+  }
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+/*  Internet Explorer/Edge 10+ Compatibility : Tablet  */
+@media all and (-ms-high-contrast: none) and (min-width: 768px) and (max-width: 1280px) {
+  hr {
+    background-color: #000;
+  }
+  h2 {
+    font-size: 3.08rem;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto 0.6fr auto auto auto;
+  }
+  .navbar * {
+    font-size: 1.2rem;
+  }
+  .introduction-container {
+    /*  Styling CSS  */
+    background: #F1F2F6;
+    -webkit-box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 95%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 5%;
+    margin-left: 3%;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .introduction-container .video-container h2 {
+    font-size: 3.08rem !important;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+  .introduction-container video {
+    width: 80%    !important;
+    height: auto   !important;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+  }
+  .book-of-the-month, .featured-items {
+    /*  Styling CSS  */
+    background: #F1F2F6;
+    -webkit-box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 95%;
+  }
+  .book-of-the-month {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    margin: 0 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .book-of-the-month h2 {
+    font-size: 3.08rem !important;
+  }
+  .book-of-the-month #book-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 5% 15%;
+  }
+  .book-of-the-month #book-details #monthly-book-information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .book-of-the-month #book-details #monthly-book-information h2:first-of-type {
+    font-size: 1.848rem !important;
+  }
+  .book-of-the-month #book-details #monthly-book-information h2 {
+    font-size: 1.54rem !important;
+  }
+  .book-of-the-month #book-details #monthly-book-information p {
+    font-size: 1.1rem !important;
+    text-align: justify;
+  }
+  .book-of-the-month #book-details .image-container {
+    margin-top: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    float: none;
+  }
+  .information-container {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 2%;
+    margin-right: 5%;
+    width: 93%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .information-container .information-content {
+    width: 100%;
+    padding-bottom: 20%;
+  }
+  .information-container .information-content h2 {
+    font-size: 3.08rem !important;
+  }
+  .information-container .information-content li, .information-container .information-content p {
+    font-size: 1rem !important;
+    margin-right: 5%;
+  }
+  .featured-items {
+    width: 100%;
+    border-radius: 0;
+  }
+  .featured-items h2 {
+    font-size: 3.08rem !important;
+  }
+  .featured-items .featured-items-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .featured-items .featured-items-container div img {
+    width: 150px;
+    height: 200px;
+  }
+  .featured-items .featured-items-container div h3 {
+    font-size: 1.8rem !important;
+  }
+  .featured-items .featured-items-container div h4 {
+    font-size: 1.5rem !important;
+  }
+  .featured-items {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .featured-items h2 {
+    font-size: 3.08rem !important;
+  }
+  .featured-items .featured-items-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .featured-items .featured-items-container div img {
+    width: 150px;
+    height: 200px;
+  }
+  .featured-items .featured-items-container div h3 {
+    font-size: 1.8rem !important;
+  }
+  .featured-items .featured-items-container div h4 {
+    font-size: 1.5rem;
+  }
+  .footer {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+/*  Internet Explorer/Edge 10+ Compatibility : Mobile  */
+@media all and (-ms-high-contrast: none) and (min-width: 0px) and (max-width: 767px) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    overflow: hidden;
+    -ms-grid-rows: 10vh 55vh auto auto auto 0.3fr;
+    gap: 5px 1px;
+    margin-left: 0;
+        grid-template-areas: "header" "introduction-container" "book-of-the-month" "information-container" "featured-items" "footer";
+    background: #E5E5E5;
+  }
+  header, body, .introduction-container, .book-of-the-month, .information-container,
+  .featured-items, footer {
+    min-width: 319px;
+  }
+  .introduction-container {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    color: #E5E5E5;
+    background: #236841;
+    margin: 0;
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  }
+  .introduction-container video {
+    width: 80%;
+  }
+  .introduction-container .video-container {
+    margin-top: -5%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    background: #236841;
+  }
+  .book-of-the-month, .information-container, .featured-items {
+    margin-right: 2%;
+    margin-top: 10%;
+  }
+  .book-of-the-month, .featured-items, .information-container {
+    /*  Styling CSS  */
+    background: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: none;
+  }
+  .book-of-the-month {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .book-of-the-month #book-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .book-of-the-month #book-details #monthly-book-information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .book-of-the-month #book-details #monthly-book-information h2 {
+    text-align: center;
+    line-height: normal;
+  }
+  .book-of-the-month #book-details #monthly-book-information p {
+    margin-top: 10%;
+    margin-left: 0;
+    text-align: justify;
+  }
+  .book-of-the-month #book-details .image-container {
+    margin-top: 51%;
+    margin-left: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    float: none;
+  }
+  .book-of-the-month #monthly-book-information h2:first-of-type {
+    font-size: 2.6rem !important;
+  }
+  .book-of-the-month #monthly-book-information h2:last-of-type {
+    margin-top: 5%;
+    font-size: 2rem !important;
+  }
+  .book-of-the-month a {
+    text-align: center;
+  }
+  .book-of-the-month h2 {
+    text-align: center;
+  }
+  .information-container {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    margin-top: 3%;
+    display: block;
+  }
+  .information-container .information-content {
+    margin-top: 10%;
+    width: 100%;
+  }
+  .featured-items {
+    margin-top: 10%;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .featured-items > h2:first-of-type {
+    text-align: center;
+    font-size: 3.6rem;
+    padding-bottom: 1.5rem;
+    font-size: 2.7rem;
+    margin-top: 0;
+  }
+  .featured-items-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-bottom: 20%;
+  }
+  .featured-items-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    text-align: center;
+  }
+  .featured-items-container div img {
+    width: 200px;
+    height: 300px;
+  }
+  .featured-items-container div h3 {
+    font-family: "avenir";
+    font-size: 2.1rem;
+    margin-bottom: 0;
+  }
+  .featured-items-container div h4 {
+    margin-top: 2%;
+    font-family: "avenir";
+    font-size: 1.35rem;
+  }
+  .footer {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .footer .footer-links {
+    margin-top: 10%;
+  }
+}
+/*# sourceMappingURL=index.css.map */

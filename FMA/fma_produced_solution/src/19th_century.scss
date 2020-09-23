@@ -1,0 +1,381 @@
+/*  SCSS Partial Imports  */
+@import "general";
+@import "header";
+@import "footer";
+
+
+
+.current-location {
+  font-size: 0.7rem;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 2.9fr 0.5fr;
+  gap: 1px 1px;
+  grid-template-areas: "header"
+                       "header"
+                       "main-body-container"
+                       "footer";
+}
+
+.header { grid-area: header; }
+
+.main-body-container { 
+    font-family: "avenir";
+
+    grid-area: main-body-container; 
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+
+    @include set-rounded-box-background($default-radius-size);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "introductory-content introductory-content introductory-content"
+                         "items-container items-container items-container";
+    grid-area: main-body-container;
+}
+
+.main-body-container > section {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.introductory-content { 
+    grid-area: introductory-content;
+    padding-top: 1%;
+    padding-bottom: 5%;
+
+    a {
+        text-decoration: underline;
+        color: blue;
+    }
+}
+
+.items-container { 
+  margin-top: 0;
+  text-align: center;
+  overflow: hidden;
+  justify-self: center;
+  grid-area: items-container; 
+}
+
+.parent-container {
+  @include flex-row;
+  justify-content: center;
+  padding-bottom: 3%;
+
+  max-width: 1200px;
+}
+
+
+
+.item-list {
+  padding-bottom: 5%;
+}
+
+.slideshow-container {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;  
+  scroll-behavior: smooth;
+  box-shadow: $box-shadow-preset;
+  border-radius: 10px;
+}
+.slideshow-container > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    margin-right: 50px;
+    border-radius: 10px;
+    
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    
+    display: flex;
+
+    
+    align-items: center;
+    
+    
+}
+
+.item {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  
+  @include flex-col;
+
+    .item-title { 
+        margin-top: 2%;
+        line-height: 10px;
+        h3 { font-size: 2rem;}
+    }
+
+    img {
+      float: left;
+      width: auto;
+      min-height: 200px;
+      height: auto;
+    }
+
+    .item-description {
+        h3 { line-height: 0; }
+        p {
+            text-align: justify;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+    }
+
+    .item-subcontent {
+        @include flex-row;
+        margin-left: 2%;
+        margin-right: 2%;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        font-size: 0;
+    }
+    
+}
+.item-price {
+    h3 { line-height: 0; }
+    p {
+        padding-top: 5%;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+.star-rating { 
+    h3 { line-height: 0; }
+    span {
+        width: 100%;
+        font-size: 2rem;
+    }
+}
+
+
+/*  CSS for slideshow scrollbar  */
+.slideshow-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slideshow-container::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.slideshow-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.item {
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.item-list > a {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  background: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+.item-list > a:active {
+  top: 1px;
+}
+.item-list > a:focus {
+  background: #000;
+  color: $secondary-color;
+}
+
+
+.footer { grid-area: footer; }
+
+
+/*  Media Query for Tablet + Laptop displays  */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .items-container { 
+    justify-self: stretch;
+  }
+}
+
+/*  Mobile CSS Adjustments  */
+
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 0.25fr auto 0.5fr;
+    gap: 1vh 1px;
+    grid-template-areas:  "header"
+                          "header"
+                          "main-body-container"
+                          "footer";
+  }
+  header, .main-body-container, footer { @include set-min-width; }
+
+  .main-body-container { margin-top: 10%; }
+
+  .introductory-content {
+    padding-left: 3%; padding-right: 3%;
+    text-align: justify;
+  }
+
+  .items-container { 
+    justify-self: stretch;
+  }
+
+  h2 { font-size: 2rem; }
+  
+  .item {
+    .item-title { 
+      h2 { font-size: 1.5rem; line-height: 110%; }
+      h3 { font-size: 1.2rem; }
+    }
+
+    .item-description {
+      h3 { font-size: 2rem; }
+      p {
+          font-size: 1rem;
+      }
+    }
+
+    
+    .item-subcontent {
+      @include flex-col;
+      margin-left: 2%;
+      margin-right: 2%;
+      justify-content: space-evenly;
+      align-items: center;
+      
+    }
+  }
+
+  .item-price {
+    h3 { font-size: 1.3rem !important; }
+    p {
+      padding-top: 5%;
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+  .star-rating { 
+    h3 { font-size: 1.3rem !important; }
+    span {
+      width: 100%;
+      font-size: 1.5rem;
+    }
+  }
+
+  .item-list {
+    margin-bottom: 15%;
+  }
+
+}
+
+
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+                                /*  Internet Explorer/Edge 10+ Compatibility  */
+                                /*  Internet Explorer/Edge 10+ Compatibility  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */   
+
+
+@media all and (-ms-high-contrast:none) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto auto auto auto;
+  }
+
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .main-body-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 0.1fr 0.45fr;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .introductory-content {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .items-container {
+    h3 {
+      margin-top: 5%;
+    }
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .item-description {
+    h3 { font-size: 1.8rem !important;}
+    width: 90%;
+  }
+  .item-subcontent {
+    h3 { font-size: 2rem !important;}
+  }
+
+  .item-price {
+    margin-top: 1.5%;
+    padding-right: 30%;
+  }
+
+  .footer {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+}
+
+/*  Internet Explorer/Edge 10+ Compatibility : Mobile  */
+@media all and (-ms-high-contrast:none) and (min-width: 0px) and (max-width: 767px) { 
+  .grid-container {
+    -ms-grid-rows: 0.1fr 0fr 1fr auto;
+  }
+
+  .item-price {
+    margin-top: 1.5%;
+    padding-right: 0;
+  }
+  header, .main-body-container, footer { @include set-min-width; }
+
+}

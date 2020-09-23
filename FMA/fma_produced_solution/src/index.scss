@@ -1,0 +1,932 @@
+/*  SCSS Partial Imports  */
+@import "general";
+@import "header";
+@import "footer";
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+
+/*  Desktop / Large Display Grid Settings  */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto auto auto auto 0.6fr;
+  gap: 5px 1px;
+  grid-template-areas:  "header header"
+                        "header header"
+                        "introduction-container introduction-container"
+                        "book-of-the-month book-of-the-month"
+                        "information-container information-container"
+                        "featured-items featured-items"
+                        "footer footer";
+}
+
+.introduction-container {
+  background: $secondary-color;
+  width: 100%;
+  grid-area: introduction-container;
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 0;
+
+  .video-container > h2 {
+    line-height: 1px;
+    @include content-heading;
+  }
+}
+
+
+.information-container, .book-of-the-month {
+  @include set-rounded-box-background($default-radius-size);
+  max-width: 1920px;
+  justify-self: center;
+}
+
+.book-of-the-month {
+  grid-area: book-of-the-month;
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 94vw;
+
+  * {
+    margin: 0 5%;
+    text-align: left;
+  }
+}
+
+.book-of-the-month > h2 {
+  margin-top: 2%;
+  text-align: center;
+
+  @include content-heading;
+}
+
+#book-details {
+  margin: 5% 10%;
+  padding-bottom: 10%;
+  @include flex-row;
+  justify-content: center;
+  
+  #monthly-book-information {
+
+    h2 {
+      font-family: "avenir"; 
+      width: 90%;
+    }
+    h2:not(:first-child) { font-size: 2.4rem; }
+
+    p {
+      width: 76%;
+      font-size: 1.4rem;
+      margin-top: 4%;
+    }
+    margin-top: 0%;
+    vertical-align: top;
+    margin-right: -5%;
+    margin-left: 0;
+  }
+
+  img {
+    float: right;
+    height: 400px;
+    width: 280px;
+  }
+}
+
+
+.featured-items {
+  margin-top: 3%;
+  background: $secondary-color;
+
+  grid-area: featured-items;
+}
+
+.featured-items > h2:first-of-type {
+  @include content-heading;
+  margin-top: 0;
+}
+
+.featured-items-container {
+  @include flex-row;
+  justify-content: center;
+  margin-left: 1%;
+  margin-right: 1%;
+  
+  div {
+    @include flex-col;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-evenly;
+    text-align: center;
+
+    img {
+      width: 200px;
+      height: 300px;
+
+    }
+
+    h3 {
+      font-family: "avenir";
+      font-size: ($title-size * 0.8);
+      margin-bottom: 0;
+    }
+    h4 {
+      margin-top: 2%;
+      font-family: "avenir";
+      font-size: $featured-item-author;
+    }
+  }
+}
+
+.information-container {
+  grid-area: information-container;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 94vw;
+  margin-top: 3%;
+
+  @include flex-row;
+  justify-content: space-evenly;
+
+  .information-content {
+    @include flex-col;
+
+    margin: 0 1%;
+    width: 32%;
+    padding-bottom: 3%;
+
+    h2 {
+      @include content-heading;
+      margin-top: 1%;
+      margin-bottom: 0;
+    }
+    
+    p, ul {
+      margin-top: 0;
+      font-size: $text-size * 1.02;
+      text-align: justify;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+    ul {
+      margin-left: 0;
+    }
+  }
+}
+
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+
+/*  Media Query for Tablet + Laptop displays  */
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+  $heading-size : 2.2rem * sum(1 + 0.1 + 0.3);  // Example of SCSS Pre-Defined Function in use
+
+  hr {
+    background-color: #000;
+  }
+  h2 { font-size: $heading-size;}
+  
+
+  .grid-container {
+    grid-template-areas: "header header"
+                         "header header"
+                         "introduction-container information-container"
+                         "book-of-the-month information-container"
+                         "featured-items featured-items"
+                         "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto 0.1fr;
+  }
+
+
+  .book-of-the-month, .featured-items {
+    /*  Styling CSS  */
+    @include set-rounded-box-background($default-radius-size);
+
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 95%;
+    
+  }
+
+  .introduction-container {
+    /*  Styling CSS  */
+    @include set-rounded-box-background($default-radius-size);
+    
+
+    width: 95%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 5%;
+    
+    .video-container { 
+      h2 {
+        font-size: $heading-size !important;
+        line-height: normal;  
+        margin-bottom: 0;
+      }
+    }
+
+    video {
+      width: 80%    !important;
+      height: auto   !important;
+    }
+  }
+
+
+  .book-of-the-month {
+    margin: 0;
+    margin-left: 5%;
+    @include flex-col;
+    h2 { font-size: $heading-size;}
+    justify-content: center;
+
+    #book-details {
+      @include flex-col;
+      justify-content: center;
+      margin: 5% 15%;
+
+      #monthly-book-information {
+        @include flex-col;
+        justify-content: center;
+
+        h2:first-of-type { font-size: $heading-size * 0.6;}
+        h2 { font-size: $heading-size * 0.5; }
+
+        p { font-size: 1.1rem; text-align: justify; }
+      }
+
+      .image-container {
+        margin-top: 5%;
+        @include flex-row;
+        justify-content: center;
+        text-align: center;
+        float: none;
+
+        img { width: auto; height: 280px; }
+      }
+    }
+  }
+
+  .featured-items { 
+    width: 100%;
+    border-radius: 0;
+
+    h2 { font-size: $heading-size * 0.2; }
+
+    .featured-items-container {
+      flex-wrap: wrap;
+
+      div {
+        img {
+          width: 150px;
+          height: 200px;
+        }
+        
+        h3 { font-size: ($title-size * 0.6); }
+        h4 { font-size: $featured-item-author; }
+      }
+    }
+  }
+  .featured-items { 
+
+    h2 { font-size: $heading-size * 0.2; }
+
+    .featured-items-container {
+      flex-wrap: wrap;
+
+      div {
+        img {
+          width: 150px;
+          height: 200px;
+        }
+        
+        h3 { font-size: ($title-size * 0.6); }
+        h4 { font-size: $featured-item-author; }
+      }
+    }
+  }
+
+
+  .information-container {
+    height: 98%;
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 93%;
+
+    @include flex-col;
+
+    justify-content: flex-start;  
+
+    .information-content {
+      h2 { font-size: $heading-size; }
+      
+      li, p {
+        font-size: $text-size * 0.8;
+        margin-right: 5%;
+      }
+      width: 100%;
+      padding-bottom: 20%;
+      
+    }
+  }
+}
+
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+
+
+/*  Media Query for Mobile  */
+@media (min-width: 0px) and (max-width: 767px){
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    overflow: hidden;
+    grid-template-rows: 0.10fr auto auto 1.91fr 0.3fr;
+    gap: 5px 1px;
+    margin-left: 0;
+    grid-template-areas: "header"
+                         "introduction-container"
+                         "book-of-the-month"
+                         "information-container"
+                         "featured-items"
+                         "footer";
+    background: $mobile-bg-color;
+  }
+
+  header, body, .introduction-container, .book-of-the-month, .information-container,
+  .featured-items, footer {
+    @include set-min-width;
+  }
+  
+  .introduction-container { 
+    grid-area: introduction-container; 
+    margin-top: 5%;
+    padding-top: 15%;
+    color: $mobile-bg-color;
+    background: $primary-color;
+    margin: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+    video {
+      width: 80%;
+    }
+  }
+  .video-container {
+    h2 {
+      /*  Text is set to 30px + 5% of the viewwidth however, should this cause overflow, the calc() function
+      **  will use the min value (30px) and disregard the +5vw - this prevents the video container heading
+      **  from overflow regardless of the display size.
+      */
+      font-size: calc(30px + 5vw) !important;
+      line-height: 150%;
+    }
+  }
+
+  .book-of-the-month, .information-container, .featured-items{
+    margin: 0 2%;
+    background: none;
+    border: 0px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 0;
+  }
+
+  .book-of-the-month {
+    grid-area: book-of-the-month;
+
+    h2 {
+      margin-left: 10%;
+    }
+
+    margin-left: 0%;
+    margin-right: 0%;
+    @include flex-col;
+    #book-details {
+      @include flex-col;
+
+      #monthly-book-information {
+        @include flex-col;
+        h2 {
+          margin-left: 0;
+          width: 100%;
+          text-align: center;
+        }
+        p {
+          width: 100%;
+          margin-top: 10%;
+          margin-left: 0;
+          text-align: justify;
+        }
+        margin-right: 1%;
+      }
+
+      .image-container {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        float: none;
+
+        /* Responsive image for mobile design. */
+        img { width: auto; height: 280px; }
+      }
+    }
+  }
+
+  #monthly-book-information h2:first-of-type {
+    font-size: 2.6rem !important;
+  }
+  #monthly-book-information h2:last-of-type {
+    font-size: 1.4rem !important;
+    margin-top: 5%;
+  }
+
+  .information-container {
+    @include flex-col;
+    
+    .information-content {
+      width: 100%;
+      margin-top: 5%;
+    }
+    padding-bottom: 10%;
+  }
+
+  .featured-items-container {
+    flex-wrap: wrap;
+  }
+}
+
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+                                /*  Internet Explorer/Edge 10+ Compatibility  */
+                                /*  Internet Explorer/Edge 10+ Compatibility  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */
+/*  ==================================================================================================  */                         
+
+/*  Internet Explorer/Edge 10+ Compatibility : PC + Desktop  */
+@media all and (-ms-high-contrast:none) {
+  $title-size: 4rem;
+  $text-size: 2rem;
+  $featured-item-author: 2.5rem;
+
+  p, li, a {
+    font-weight: normal;
+    font-size: $text-size !important; 
+  }
+  li {
+    margin-left: 2%;
+  }
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto auto auto 1fr 0.6fr;
+  }
+
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .introduction-container {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .book-of-the-month {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .information-container {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .featured-items {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .footer {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    padding-bottom: 5%;
+    margin-top: 15%;
+    margin-bottom: 0;
+  }
+
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+
+/*  Internet Explorer/Edge 10+ Compatibility : Tablet  */
+@media all and (-ms-high-contrast:none) and (min-width: 768px) and (max-width: 1280px) {
+  $heading-size : 2.2rem * 1.4;
+
+  hr {
+    background-color: #000;
+  }
+
+  h2 { font-size: $heading-size;}
+
+  body { overflow-x: hidden; }
+
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto 0.6fr auto auto auto;
+  }
+  
+  .navbar {
+    * { font-size: 1.2rem;}
+  }
+
+  .introduction-container {
+    /*  Styling CSS  */
+    @include set-rounded-box-background($default-radius-size);
+
+    width: 95%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 5%;
+    margin-left: 3%;
+    
+    .video-container { 
+      h2 {
+        font-size: $heading-size !important;
+        line-height: normal;  
+        margin-bottom: 0;
+      }
+    }
+
+    video {
+      width: 80%    !important;
+      height: auto   !important;
+      padding-bottom: 5%;
+      margin-bottom: 5%;
+    }
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .book-of-the-month, .featured-items {
+    /*  Styling CSS  */
+    @include set-rounded-box-background($default-radius-size);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 95%;
+    
+  }
+
+  .book-of-the-month {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+
+    margin: 0 5%;
+    @include flex-col;
+    h2 { font-size: $heading-size !important;}
+    justify-content: center;
+
+    #book-details {
+      @include flex-col;
+      justify-content: center;
+      margin: 5% 15%;
+
+      #monthly-book-information {
+        @include flex-col;
+        justify-content: center;
+
+        h2:first-of-type { font-size: $heading-size * 0.6 !important; }
+        h2 { font-size: $heading-size * 0.5 !important; }
+
+        p { font-size: 1.1rem !important; text-align: justify; }
+      }
+
+      .image-container {
+        margin-top: 5%;
+        @include flex-row;
+        justify-content: center;
+        text-align: center;
+        float: none;
+      }
+    }
+  }
+
+  .information-container {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 2%;
+    margin-right: 5%;
+    width: 93%;
+
+    @include flex-col;
+
+    justify-content: flex-start;  
+
+    .information-content {
+      h2 { font-size: $heading-size !important; }
+      
+      li, p {
+        font-size: $text-size * 0.8 !important;
+        margin-right: 5%;
+      }
+      width: 100%;
+      padding-bottom: 20%;
+      
+    }
+  }
+
+  .featured-items { 
+    width: 100%;
+    border-radius: 0;
+
+    h2 { font-size: $heading-size * 1 !important; }
+
+    .featured-items-container {
+      flex-wrap: wrap;
+
+      div {
+        img {
+          width: 150px;
+          height: 200px;
+        }
+        
+        h3 { font-size: ($title-size * 0.6) !important; }
+        h4 { font-size: $featured-item-author !important; }
+      }
+    }
+  }
+  .featured-items { 
+
+    h2 { font-size: $heading-size * 1 !important; }
+
+    .featured-items-container {
+      flex-wrap: wrap;
+
+      div {
+        img {
+          width: 150px;
+          height: 200px;
+        }
+        
+        h3 { font-size: ($title-size * 0.6) !important; }
+        h4 { font-size: $featured-item-author; }
+      }
+    }
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .footer {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+}
+
+/*
+*******************************************************************************************************
+*******************************************************************************************************
+*******************************************************************************************************
+******************************************************************************************************* 
+*/
+
+/*  Internet Explorer/Edge 10+ Compatibility : Mobile  */
+@media all and (-ms-high-contrast:none) and (min-width: 0px) and (max-width: 767px){
+
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    overflow: hidden;
+    -ms-grid-rows: 10vh 55vh auto auto auto 0.3fr;
+    gap: 5px 1px;
+    margin-left: 0;
+    grid-template-areas: "header"
+                         "introduction-container"
+                         "book-of-the-month"
+                         "information-container"
+                         "featured-items"
+                         "footer";
+    background: $mobile-bg-color;
+  }
+  
+  header, body, .introduction-container, .book-of-the-month, .information-container,
+  .featured-items, footer {
+    @include set-min-width;
+  }
+
+  .introduction-container { 
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    
+    
+    color: $mobile-bg-color;
+    background: $primary-color;
+    margin: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+
+    video {
+      width: 80%;
+    }
+    .video-container {
+      margin-top: -5%;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content; 
+      background: $primary-color;
+    }
+  }
+
+
+  .book-of-the-month, .information-container, .featured-items {
+    margin-right: 2%;
+    margin-top: 10%;
+  }
+
+  .book-of-the-month, .featured-items, .information-container {
+    /*  Styling CSS  */
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  .book-of-the-month {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    margin-left: 0%;
+    margin-right: 0%;
+    @include flex-col;
+    
+    #book-details {
+      @include flex-col;
+      #monthly-book-information {
+        @include flex-col;
+        h2 {
+          text-align: center;
+          line-height: normal;
+        }
+        p {
+          margin-top: 10%;
+          margin-left: 0;
+          text-align: justify;
+        }
+        
+      }
+      .image-container {
+        margin-top: 51%;
+        margin-left: 10%;
+        @include flex-row;
+        justify-content: center;
+        text-align: center;
+        float: none;
+      }
+    }
+    #monthly-book-information h2:first-of-type {
+      font-size: 2.6rem !important;
+    }
+    #monthly-book-information h2:last-of-type {
+      margin-top: 5%;
+      font-size: 2rem !important;
+    }
+    a { text-align: center;}
+    h2{ 
+      text-align: center;
+    }
+  }
+
+  .information-container { 
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    margin-top: 3%;
+    display: block;
+    .information-content {
+      margin-top: 10%;
+      width: 100%;
+    }
+  }
+
+
+
+  .featured-items {
+    margin-top: 10%;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .featured-items > h2:first-of-type {
+    @include content-heading;
+    font-size: ($title-size * 0.9);
+    margin-top: 0;
+  }
+
+  .featured-items-container {
+    @include flex-row;
+    justify-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-bottom: 20%;
+    
+    div {
+      @include flex-col;
+      margin-left: 5%;
+      margin-right: 5%;
+      justify-content: space-evenly;
+      text-align: center;
+
+      img {
+        width: 200px;
+        height: 300px;
+      }
+
+      h3 {
+        font-family: "avenir";
+        font-size: ($title-size * 0.7);
+        margin-bottom: 0;
+      }
+      h4 {
+        margin-top: 2%;
+        font-family: "avenir";
+        font-size: $featured-item-author * 0.9;
+      }
+    }
+  }
+
+  
+
+  .footer { 
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+
+    .footer-links {
+      margin-top: 10%;
+    }
+  }
+}
