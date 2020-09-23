@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BootWorld</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="scripts/menubar.js"></script>
+        <!-- CSS Normalize Reset method used. -->
+        <link rel="stylesheet" href="src/normalize.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+        <link rel="stylesheet" href="src/styles.css">
+    </head>
+    <body id="page-container">
+        <div class="grid-container">
+        
+            <!-- Header body content -->
+            <header>
+                <div class="top-header">
+                    <h1 id="logo">
+                        <a href="index.html">BOOT</a>
+                        <a href="index.html">WORLD</a>
+                    </h1>
+                </div>
+            </header>
+            <!-- PC View Header Links -->
+            <div class="desktop-links">
+                <a href="#">Accessibility</a>
+                <a href="#">Private policy</a>
+                <a href="#">Site map</a>
+            </div>
+        
+            <div class="navigation">
+                <!-- Mobile Navigation displayed for smaller screen sizes. -->
+                <a id="navbutton" href="#navbar" onclick="openMenu()">Menu</a>
+                <div id="mobile-nav" class="navbar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+                    <a href="#">HOME</a>
+                    <a href="#" onclick="goToShop()">SHOP</a>
+                    <a href="#" onclick="goToBottom()">NEWS</a>
+                    <a href="#">ABOUT US</a>
+                    <a href="#">CONTACT US</a>
+                    <a href="#" onclick="goToBottom()">SUBSCRIBE</a>
+                    <a></a>
+                </div>
+        
+                <!-- PC Navigation displayed for larger screen sizes. -->
+                <div id="desktop-nav" class="topnav">
+                    <a href="#" class="active">HOME</a>
+                    <a href="#">SHOP</a>
+                    <a href="#">NEWS</a>
+                    <a href="#">ABOUT US</a>
+                    <a href="#">CONTACT US</a>
+                    <a href="#">SUBSCRIBE</a>
+                </div>
+            </div>
+        
+            <!-- Site content conflicts with mockups provided. 
+                        Have chosen to include given site content where applicable. -->
+            <section class="welcome-section">
+                <div id="welcome-text">
+                    <h2>Welcome to BootWorld</h2>
+                    <p>BootWorld is the largest online footwear retailer in the UK. <a>Our shop</a> always has stock of the
+                        latest
+                        designer footwear
+                        at the most competitive prices. Want to know more about us or our products, <a>why not send us a
+                        message.</a>
+                    </p>
+                </div>
+        
+                <div id="welcome-image">
+                    <img id="main-image" src="images/boots.png" alt="big boy boots.">
+                </div>
+            </section>
+        
+        
+            <!-- Main body content -->
+            <div class="main-body">
+                <div id="new-products">
+                    <div id="store-heading">
+                        <h2>New In The Shop</h2>
+                    </div>
+                    <div class="content" id="products">
+                        <h3>COWBOY BOOTS</h3>
+                        <p> Stand out from the crowd in a pair of classic cowboy boots. Available for Ladies and Gents from only
+                            <span>£49.99</span>
+                        </p>
+        
+                        <h3>MILITARY BOOTS</h3>
+                        <p>Hard-wearing Men's military boots, guaranteed to withstand all weathers. From only
+                            <span>£69.99</span>
+                        </p>
+        
+                        <h3>ROMAN SANDALS</h3>
+                        <p>Get ready for summer with some stylish roman sandals. From only <span>£39.99</span></p>
+        
+                        <h3>OFFICE SHOES</h3>
+                        <p>You don't have to wear boring shoes to the office. Check out our new stock of Ladies and Gents
+                            fashionable office shoes
+                            from only <span>£44.99</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="content" id="latest-news">
+                    <h2>Latest News</h2>
+                    <a href="#">Our seasonal sale has kicked off again! make sure you stop by our online shop to pick up a
+                        bargain.</a>
+                    <p>Posted by: Joe</p>
+                </div>
+                
+                <div class="content" id="subscribe">
+                    <h2>Subscribe</h2>
+                    <p>Sign up to our newsletter and receive exclusive offers by email weekly.</p>
+                
+                    <div id="details-capture">
+                        <form class="details-form">
+                            <fieldset>
+                                <legend>Sign up now!</legend>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="name">Your Name:</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="name" name="name" placeholder="John Smith">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="email">Email Address: <span>*</span></label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="email" id="email" name="email" placeholder="jsmith@pengboi.com">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <input id="mobile-submit" type="submit" value="Sign up">
+                                    <input id="desktop-submit" type="submit" value="Sign up">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <br>
+                </div>
+                
+            </div>
+        
+            <!-- Footer content -->
+            <section class="footer">
+                <div class="location-details">
+                    <h2>our address:</h2>
+                    <p>Shoe Street, <br /> London, EC2 7PP</p>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

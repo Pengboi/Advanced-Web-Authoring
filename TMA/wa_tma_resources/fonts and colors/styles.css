@@ -1,0 +1,49 @@
+@font-face {
+  font-family: BebasNeue;
+  src: url(BebasNeue-webfont.woff);
+  font-size: 16px;
+}
+
+body {
+	background-color: #ddd;
+}
+
+span {
+	color: #000;
+}
+
+h1 {
+	font-family:'BebasNeue';
+	font-size:1.5rem;
+}
+
+h2 {
+	font-family: 'BebasNeue';
+	font-size:1.25rem;
+	color: #016008;
+	clear: left;
+	margin: 0 1rem;
+}
+dl {
+	width:70px;
+	float:left;
+	text-align:center;
+	font-family:Lato;
+}
+dt, dd {
+	margin:0;
+	padding:0;
+	text-align:center;
+    width: 60px !important;
+}
+dd {
+    border: 1px solid #000000 !important;
+    height: 50px !important;
+}
+
+p {
+	font-family:Lato;
+	max-width: 20%;
+	margin: 0 0 1rem  1rem;
+	color: #016008;
+}

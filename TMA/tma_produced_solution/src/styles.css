@@ -1,0 +1,1240 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url("fonts/BebasNeue-webfont.woff") format('woff');
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/*  ============================================================================
+    Reset section. Here, default values are assigned to various HTML tags
+    used throughout the document. Function-specific tags will be devided
+    into their corrosponding sections.
+
+    The site features a mobile-first approach. Adjustments for desktop
+    devices will be defined at the bottom through media queries.
+*/
+
+/* Anti-Aliasing applied to text */
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Removes all link underlines - overriden where necessary */
+a {
+    text-decoration: none;
+}
+
+/*  Defines default font-size and font-family as specified by project requirements
+    Overriden where necessary.
+*/
+body,
+footer,
+input,
+button {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    color: #3e3e3e;
+}
+
+
+#desktop-submit { display: none; }
+
+h1 {
+    font-family: 'BebasNeue';
+    /*  Although the font-family was defined with weight 'Normal', the normalisation
+        file used in the project, namely Normalize.css sets the default for h1 tags
+        to a bold weight. This is overriden below to be consistent with mockups provided
+    */
+    font-weight: normal;
+}
+
+h2 {
+    font-family: 'BebasNeue';
+    font-size: 1.5rem;
+    color: #3e3e3e;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'BebasNeue';
+    font-size: 1.25rem;
+    clear: left;
+    margin: 0;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+/* Image dynamically resizes with window res. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+dl {
+    width: 70px;
+    float: left;
+    text-align: center;
+    font-family: Lato;
+}
+
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 60px !important;
+}
+
+dd {
+    border: 1px solid #000000 !important;
+    height: 50px !important;
+}
+
+
+/* CSS Grid rows & columns are defined. */
+
+.grid-container {
+    margin: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    grid-template-areas:    "top-header navigation" 
+                            "welcome-section welcome-section" 
+                            "welcome-section welcome-section" 
+                            "main-body main-body"
+                            "main-body main-body"
+                            "main-body main-body"
+                            "footer footer";
+}
+
+.top-header {
+    grid-area: top-header;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+
+.welcome-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0 3%;
+    grid-template-areas:
+                        "welcome-text" 
+                        "welcome-image";
+    grid-area: welcome-section;
+    grid-area: welcome-section;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+#welcome-text {
+    grid-area: welcome-text;
+}
+
+#welcome-image {
+    grid-area: welcome-image;
+
+}
+
+.main-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr;
+    gap: 1px 0px;
+    grid-template-areas: "new-products"
+                         "latest-news"
+                         "subscribe";
+    grid-area: main-body;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 1.5%;
+}
+
+/*  General Sibiling Combinator Example. Used to add top-margin for text
+    underneath h2 tag - as there was afforded space in mockups provided. 
+*/
+h2 ~ p {
+    margin-top: 2%;
+}
+
+/*  Adjacent Sibling Combinator Example. Used to apply appropriate css to
+    all product description 'p' tags following their product title 'h3'
+    tags. (changes new product details)
+*/
+h3 + p {
+    font-size: 0.96rem;
+    color: #016008;
+    margin: 0;
+    padding-left: 2%;
+    padding-bottom: 3%;
+}
+
+/*  Child Combinator Examples w/ Explanation of function */
+
+/* Changes links in welcome paragraph to greeen colour. */
+p > a {
+    color: #016008;
+}
+
+/* Changes prices in new products' description to dark grey colour */
+p > span {
+    color: #3e3e3e;
+}
+
+/* Adds red astricks * for required fields in subscription form. */
+label > span {
+    color: #ff0000;
+}
+
+/*  Grey background & space constraints applied to all 'child' divs
+    in main body to conform with mockups
+*/
+.content {
+    background-color: #dddddd;
+    margin-top: 5%;
+}
+
+
+/*  First div (of main body - containing the text "New in the shop") has no
+    background applied. Margins also added to top and bottom to add whitespace
+    between image and div containing products. Text also padded to the left to
+    ressemble mockups provided.
+*/
+#store-heading{
+    background-color: #fff;
+    margin-top: 5%;
+    padding-left: 3%;
+    margin-bottom: 5%;
+}
+
+
+/*  Examples of Psudo-classes w/ Explanation of function */
+
+/*  As the document only has a single h1 tag, this changes the title 'BootWorld'
+    to conform with mockups provided, 'Boot' renders larger than 'World'.
+*/
+h1 :first-child {
+    font-size: 2.5rem;
+}
+h1 :last-child {
+    font-size: 2rem;
+}
+
+
+#logo {
+    /* Debug ]
+        background-color: blueviolet;
+    */
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: block;   
+}
+
+#logo a {
+
+    /*Debug next line 
+    background-color: lightsalmon;*/
+
+    font-family: 'BebasNeue';
+    color: #016008;
+    /* Mockup contains slight spacing between letters.*/
+    text-shadow: 1.5px 1.2px rgba(0, 0, 0, 0.7);
+    /* Text Shadow support for IE5.5 --> IE9 
+     * ==================================================================================================================
+     * !TMA MARKER BEWARE!
+     * You will not be able to test the functionality of the text-shadow operating on IE9
+     * using IE 10+ to 'emulate' IE9, as Microsoft removed the below functionality from
+     * IE 10+. 
+     * To Verify functionality, you will need to install IE9 (32/64 bit) for Windows Vista - (yeah. vista.)
+     * Or, you can trust the code works, I wouldn't lie. :) 
+     * D/L link for IE9 https://www.microsoft.com/en-GB/download/confirmation.aspx?id=43374
+     * ==================================================================================================================
+    */
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction=45);
+}
+
+
+/* Center aligns the welcome image on mobile devices. */
+#main-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*  ===============================================================================
+    Navigation
+    Following section includes classes for side navigation for mobile devices.
+*/
+#navbutton {
+    position: absolute !important;
+    top: 1.5%;
+    right: 2%;
+    color: #000;
+    border-radius: 13px;
+    border: 2px solid #000;
+    padding: 0 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+    /*Normalize.css applies a margin to h1 element, margin used to enforce similar effect for menu button.*/
+    margin: 1.2em 0;
+}
+
+.topnav {
+    display: none;
+}
+
+.navbar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #3e3e3e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.navbar a {
+    padding: 5%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-top: 10%;
+    color: #f6f6f6;
+    display: block;
+    transition: 0.3s;
+}
+
+/*  Navigation Close option "X" for mobile sidenav will remain on top right, while navigation links
+    have a top margin of 5% (defined in .navbar a)
+*/
+.navbar a:first-of-type {
+    margin-top: 0;
+}
+
+.navbar a:hover {
+    color: #f1f1f1;
+}
+
+/* CSS for close button on side-nav shown on mobile devices. */
+.navbar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 3rem;
+    margin-left: 50px;
+}
+
+/* Hides desktop-based links if mobile user. */
+.desktop-links {
+    display: none;
+}
+
+
+
+
+
+/* Product titles (in new products) are green and margins are defined */
+#new-products {
+    grid-area: new-products;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+#products > h3 {
+    color: #016008;
+}
+
+
+/* News  */
+#latest-news {
+    grid-area: latest-news;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+#latest-news > h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding-left: 2%;
+    padding-bottom: 3%;
+    padding-top: 5%;
+}
+
+#latest-news > a {
+    text-decoration: underline;
+    color: #016008;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+    padding-bottom: 3%;
+}
+
+#latest-news > p {
+    font-style: italic;
+    margin-right: 5%;
+    text-align: right;
+    padding-bottom: 5%;
+}
+
+/* Newsletter Subscription components */
+
+#subscribe {
+    grid-area: subscribe;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+#subscribe > h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding-left: 2%;
+    padding-bottom: 3%;
+    padding-top: 5%;
+}
+
+#subscribe > p {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-bottom: 3%;
+}
+
+fieldset {
+    background-color: #f6f6f6;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 5%;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction=45);
+}
+
+legend {
+    font-family: 'BebasNeue';
+    color: #3e3e3e;
+    font-size: 1.6rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: -4%;
+}
+
+/* Examples of Attribute Selectors w/ Exalanation of function */
+
+/* Input fields for registration made larger to allow easier interactability on mobile.*/
+input[type=text], input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Submit button is adjusted for mobile-based interaction. */
+input[type=submit]:first-of-type {
+  background-color: #016008;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Makes form components remain within margins - to prevent components touching edge of container div */
+
+.row:first-of-type {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.row {
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Form labels are made 'bolder' to resemble mockup and larger to be easier to read on mobile*/
+.col-25 > label {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+
+
+/*
+===================================================================================================
+    Footer Section CSS
+*/
+
+.footer {
+    grid-area: footer;
+    margin-top: 5%;
+    padding-bottom: 5%;
+	position: relative;
+	bottom: 0;
+}
+
+.footer > .location-details {
+    background-color: #dddddd;
+    padding-left: 2%;
+    padding-top: 5%;
+}
+
+.location-details > p {
+    font-weight: bolder;
+    margin-top: 0;
+    padding-bottom: 5%;
+}
+
+
+/*
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+
+
+                            Media query for devices with a width 768-1024px
+                                            TABLET DESIGN
+
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+*/
+
+@media screen and (min-width: 768px){
+    
+     /* For larger displays, 95% of width is used and whole page is center-aligned. (as shown in mockups) */
+    body{
+        width: 95%;
+        margin: auto;
+    }
+
+    
+    .grid-container {
+        display: grid;
+        padding-left: 2%;
+        padding-right: 2%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr 0.01fr 0.1fr [we] 0.8fr 0.2fr 0.7fr 1fr auto;
+        gap: 1px 20px;
+        grid-template-areas: "top-header desktop-links"
+                             "navigation navigation"
+                             "welcome-section welcome-section"
+                             "welcome-section welcome-section"
+                             "main-body main-body"
+                             "main-body main-body"
+                             "main-body main-body"
+                             "footer footer";
+        border-color: #A9A9;
+        border-style: solid;
+    }
+
+    .footer { grid-area: footer; }
+
+
+    /* ==========================================================================================
+        Heading Section 
+    */
+
+    /* Title CSS */
+
+    .top-header { grid-area: top-header}
+
+    h1 :first-child {
+    font-size: 3rem;
+    }
+    h1 :last-child {
+        font-size: 2.5rem;
+    }
+    
+    /* Changes to drop shadow, as mockup provided for larger displays shows a more 90 degree drop shadow.*/
+    #logo a {
+        text-shadow: 2px 3px rgba(0, 0, 0, 0.7);
+        /* Text Shadow support for IE5.5 --> IE9 
+        * ==================================================================================================================
+        * !TMA MARKER BEWARE!
+        * You will not be able to test the functionality of the text-shadow operating on IE9
+        * using IE 10+ to 'emulate' IE9, as Microsoft removed the below functionality from
+        * IE 10+. 
+        * To Verify functionality, you will need to install IE9 (32/64 bit) for Windows Vista - (yeah. vista.)
+        * Or, you can trust the code works, I wouldn't lie. :) 
+        * D/L link for IE9 https://www.microsoft.com/en-GB/download/confirmation.aspx?id=43374
+        * ==================================================================================================================
+        */
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction=90);
+    }
+
+    /* Desktop Links */
+   
+    .desktop-links { 
+        grid-area: desktop-links;
+        display: block;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        padding-top: 2%;
+    }
+
+    .desktop-links > a {
+        margin: 2%;
+        font-size: 0.8rem;
+        color: #016008;
+        float: right;
+    }
+
+    /*  ====================================================================================================
+        Navigation Section 
+    */
+
+    .navigation { 
+        grid-area: navigation;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+    }
+
+    /* Begins by hiding side navigation on webpage. */
+    #navbutton {
+        display: none;
+    }
+    .navbar {
+        display: none;
+    }
+
+    /* Insert css for top navigation used on non-mobile screens  */
+
+    .topnav {
+        display: inline-block;
+    }
+
+    .topnav a {
+        font-family: 'BebasNeue';
+        color: #000;
+        border-radius: 3px;
+        padding: 5px 15px;
+        font-weight: bold;
+        line-height: 2rem;
+        /*Normalize.css applies a margin to h1 element, margin used to enforce similar effect for menu button.*/
+        margin: 4em 0.4rem;
+        background-color: #cccccc;
+
+         /* Mockup contains slight spacing between letters.*/
+        box-shadow: 1.5px 1.2px rgba(0, 0, 0, 0.7);
+        /* Box Shadow support for IE5.5 --> IE9 
+        * ==================================================================================================================
+        * !TMA MARKER BEWARE!
+        * You will not be able to test the functionality of the text-shadow operating on IE9
+        * using IE 10+ to 'emulate' IE9, as Microsoft removed the below functionality from
+        * IE 10+. 
+        * To Verify functionality, you will need to install IE9 (32/64 bit) for Windows Vista - (yeah. vista.)
+        * Or, you can trust the code works, I wouldn't lie. :) 
+        * D/L link for IE9 https://www.microsoft.com/en-GB/download/confirmation.aspx?id=43374
+        * ==================================================================================================================
+        * Below line is required for box-shadows pre-IE10
+        */
+        border-collapse: separate;
+    }
+
+    .topnav a:hover {
+        background-color: #016008;
+    }
+
+    .topnav a.active {
+        background-color: #f6f6f6;
+    }
+
+    /*  ===============================================================================================
+        Welcome Section
+    */
+
+    .welcome-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-top: 5%;
+        grid-template-areas: "welcome-image welcome-text"
+                             "welcome-image welcome-text";
+        grid-area: welcome-section;
+        grid-area: welcome-section;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        border: 1px solid #A9A9;
+        border-color: #A9A9;
+        border-style: solid;
+    }
+    
+    #welcome-image { 
+        grid-area: welcome-image;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 3%;
+        margin-bottom: 5%;
+        border: 1px solid #A9A9;
+        border-color: #A9A9;
+        border-style: solid;
+    }
+
+    #welcome-text {
+        grid-area: welcome-text;
+        margin-top: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        padding-right: 5%;
+
+    }
+
+    /*  ===================================================================================================
+        Main Body Section
+    */
+
+    .main-body {
+        display: grid;
+        grid-template-columns: 0.6fr 0.4fr;
+        grid-template-rows: 1fr 2fr 0.3fr;
+        gap: 1px 0px;
+        grid-template-areas: "new-products latest-news"
+                             "new-products subscribe"
+                             "new-products subscribe";
+        grid-area: main-body;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        border: 1px solid #A9A9;
+        margin-top: 5%;
+        border-color: #A9A9;
+        border-style: solid;
+    }
+
+    .main-body > div {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    /*  For tablet/desktop, left padding is removed to allow "New in the shop" to be more consistent with
+        mockup design.
+
+        @Override
+    */
+    #store-heading {
+        grid-area: store-heading;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    #store-heading > h2 {
+        font-size: 2rem;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+    }
+
+    #new-products { 
+        grid-area: new-products;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+    }
+
+    /* Changes price of products to reflect mockup */
+    p > span {
+        color: #000;
+        font-weight: bold;
+    }
+
+    #products > * {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    #products > h3:first-of-type { padding-top: 3%; }
+    #products > h3 {
+        margin-top: 2%;
+        font-size: 1.5rem;
+    }
+    #products:last-child { padding-bottom: 3%; }
+
+    /*  ===============================================================================================
+        ===============================================================================================
+        News - overriding mobile display to enlarge for new grid arrangement
+    */
+    #latest-news { 
+        grid-area: latest-news; 
+        height: -webkit-fit-content; 
+        height: -moz-fit-content; 
+        height: fit-content;
+    }
+    #latest-news > h2 { padding-left: 5%; }
+
+    #latest-news > a { margin-left: 5%; }
+
+    #latest-news > p { padding-bottom: 2%; }
+
+    /*  ===============================================================================================
+        =============================================================================================== 
+        Subscription - overriding mobile display to enlarge for new grid arrangement
+    */
+
+    #subscribe > h2 { padding-left: 5%; }
+
+    #subscribe > p { margin-left: 5%; }
+
+    /* Adjusting subscription form to ressemble mockups provided. */
+    fieldset {
+        background-color: #fff;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-bottom: 5%;
+        box-shadow: 0px 0px rgba(0, 0, 0, 0);
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=#fff, direction=90);
+    }
+
+    legend {
+        font-family: 'BebasNeue';
+        font-weight: bolder;
+        color: #3e3e3e;
+        font-size: 1.6rem;
+        margin-left: 2%;
+        margin-right: 5%;
+    }
+
+    input[type=text], input[type=email] {
+        width: 100%;
+        padding: 2px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    .col-25 > label {
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+
+    /* Switches button displayed to user to a button which is consistent with desktop design */
+    #mobile-submit {display: none;}
+    #desktop-submit { display: block; }
+
+    /*  ===================================================================================================
+        ===================================================================================================
+        Footer Section 
+    */
+
+    .footer {
+        margin-top: 2%;
+        padding-bottom: 0%;
+    }
+
+    .footer > .location-details {
+        background-color: #dddddd;
+        padding-left: 2%;
+        padding-top: 2%;
+    }
+
+    .location-details > p {
+        font-weight: bolder;
+        padding-bottom: 5%;
+    }
+
+}
+
+/*
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+
+
+                            Media query for devices with a width 1025px +
+                                            DESKTOP DESIGN
+
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+*/
+
+@media screen and (min-width: 1025px){
+    
+     /* For larger displays, 95% of width is used and whole page is center-aligned. (as shown in mockups) */
+    body{
+        width: 95%;
+        margin: auto;
+    }
+
+    .grid-container {
+        grid-template-rows: 0.2fr 0.05fr 0.01fr [we] 0.8fr 0.2fr 0.7fr 0.8fr auto;
+        border-color: #A9A9;
+        border-style: solid;
+    }
+
+    /* Heading (PC Displays) */
+
+    h1 :first-child {
+        font-size: 4rem;
+    }
+
+    h1 :last-child {
+        font-size: 3rem;
+    }
+    
+    
+
+     /* Desktop Links (PC Displays) */
+   
+    .desktop-links { 
+        grid-area: desktop-links;
+        display: block;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        padding-top: 2%;
+    }
+
+    .desktop-links > a {
+        margin: 2%;
+        font-size: 1.2rem;
+        color: #016008;
+        float: right;
+    }
+
+    .topnav  a {
+        font-size: 1.5rem;
+        padding: 10px 25px;
+    }
+
+    /* Welcome section (PC Displays) */
+    h2 {
+        font-size: 2rem;
+    }
+    h2 ~ p {
+        font-size: 1.7rem;
+    }
+
+    /* New Store Products section (PC Displays) */
+    #store-heading > h2 {
+        font-size: 3rem;
+    }
+
+    /* Changes price of products to reflect mockup */
+    p > span {
+        font-size: 1.2rem;
+    }
+
+    #products > * {
+        font-size: 1.2rem;
+    }
+    #products > h3 {
+        font-size: 2.2rem;
+    }
+
+    /*  ===============================================================================================
+        ===============================================================================================
+        News - overriding mobile display to enlarge for new grid arrangement
+    */
+    #latest-news { 
+        grid-area: latest-news; 
+        height: -webkit-fit-content; 
+        height: -moz-fit-content; 
+        height: fit-content;
+    }
+    #latest-news > h2 { font-size: 3rem; }
+
+    #latest-news > a { font-size: 1.4rem; }
+
+    #latest-news > p { font-size: 1rem; }
+
+    /*  ===============================================================================================
+        =============================================================================================== 
+        Subscription (PC displays)
+    */
+
+    #subscribe {
+        padding-bottom: 5%;
+        margin-bottom: 5%;
+    }
+
+    #subscribe > h2 { font-size: 3rem; }
+
+    #subscribe > p { font-size: 1.4rem; }
+
+    legend {
+        font-size: 2rem;
+    }
+
+    input[type=text], input[type=email] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    .col-25 > label {
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+
+    #desktop-submit {
+        padding: 6px;
+        width: 30%;
+        font-size: 1.2rem;
+    }
+
+    /*  ===================================================================================================
+        ===================================================================================================
+        Footer Section (PC displays)
+    */
+    .location-details > h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+
+    .location-details > p {
+        font-size: 1.3rem;
+    }
+
+}
+
+
+/*  Media queries targetted at CSS Grid compatibility
+    for legacy Internet Explorer IE 9 ONLY (for IE10+ see below)
+
+    The query may seem counter-intuitive, but IE10+ offers support for Grid,
+    so I have opted for targetting IE 9 through min-width:0/0 ad min-resolution
+    allowing IE10+ to be targetted in another media query where vender-specific prefixes
+    are applied for CSS Grid.
+
+    Meanwhile here, to makes sure CSS styling is applied ONLY to larger displays, the other
+    'min-width: 768px' is applied. This ensures ONLY IE 9 WITH a window size of 768px+ is
+    targatted.
+*/
+@media screen and (min-width:0\0) and (min-resolution: .001dpcm) and (min-width: 768px) { 
+    /* IE9 does not support fully HTML 5 and CSS3, so desktop links were placed with absolute position and margins. */
+    .desktop-links {
+        white-space: nowrap;
+        position: absolute;
+        width: 400px;
+        top: 0;
+        right: 0;
+        margin-right: 10%;
+    }
+
+    /* Adapting border thickness using HTML4 compliant CSS (for IE9+)*/
+    .welcome-section { 
+        border: solid #A9A9;
+        border-width: 1px; 
+    }
+    #welcome-image { 
+        border: solid #A9A9;
+        border-width: 1px; 
+    }
+    .main-body {
+        border: solid #A9A9;
+        border-width: 1px;
+    }
+
+    .welcome-section > * {
+        margin-left: 2%;
+    } 
+
+    #subscribe {
+        margin-bottom: 2%;
+    }
+
+    /* Adapts padding to comply with differnces in rendering used in IE */
+    .topnav a {
+        padding: 3px 13px;
+    }
+
+    .welcome-section {
+        width: 100%;
+        overflow: auto;
+    }
+
+    #welcome-text {
+        width: 40%;
+        float: right;
+        overflow-x: auto;
+    }
+
+    #welcome-image {
+        width: 40%;
+        float: left;
+        overflow-x: auto;
+    }
+    
+    /* CSS for 'emulating' 2 column design for main-content */
+    .main-body {
+        width: 100%;
+        overflow: auto;
+    }
+
+    #new-products {
+        width: 50%;
+        float: left;
+        overflow-x: auto;
+    }
+
+    #latest-news {
+        width: 30%;
+        float: right;
+        overflow-x: auto;
+    }
+
+    #subscribe {
+        float: right;
+        width: 30%;
+        overflow-x: auto;
+    }
+}
+
+
+/*  Media queries targetted at CSS Grid compatibility
+    for legacy Internet Explorer IE 10+ . Aimed at applying vendor-specific
+    prefixes for CSS Grid compatibility.
+*/
+@media all and (-ms-high-contrast:none) and (min-width: 768px) {
+
+    #welcome-text > * {
+        padding-bottom: 10%;
+    }
+
+    .grid > * {
+        width: 33%;
+    }
+
+    .grid-container {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr [we] 2fr 0.2fr 1fr 1fr 1fr;
+    }
+
+    .footer {
+        -ms-grid-row: 8;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        padding-top: 3%;
+    }
+
+    .top-header {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    .desktop-links {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+    }
+
+    .navigation {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+    .welcome-section {
+        border: solid #A9A9;
+        border-width: 1px;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+    #welcome-image {
+        border: solid #A9A9;
+        border-width: 1px;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    /* Ensures border does not go over image */
+    #welcome-image > img {
+        margin-bottom: 10%;
+    }
+
+
+    #welcome-text {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+    }
+
+    .main-body {
+        display: -ms-grid;
+        border: solid #A9A9;
+        border-width: 1px;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
+        -ms-grid-row: 5;
+        -ms-grid-row-span: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+    #subscribe {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        padding-bottom: 120px;
+        margin-bottom: 10%;
+    }
+
+    #details-capture {
+        bottom: 0;
+    }
+
+    #new-products {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    #latest-news {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+    }
+}
